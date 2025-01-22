@@ -1,0 +1,14 @@
+.navbar.active {
+  background-color: #13124a;
+  box-shadow: 0 1px 1px rgba(5, 9, 5, 0.644);
+}
+
+.navbar__list.active {
+  top: 0;
+  padding-bottom: 2rem;
+  overflow-y: scroll;
+}
+
+.navbar__list li {
+  animation: fadeIn 1.2s 0.6s forwards;
+}

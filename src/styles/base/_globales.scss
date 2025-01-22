@@ -1,0 +1,50 @@
+@use '../utils/mixins.scss'as m;
+:root{
+  --bakcground-footer:#40403F;
+  --font-primary:"DM Sans", sans-serif;
+  --color-primary-text:#13124A;
+  --background-primary:#13124A;
+
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    scrollbar-width: none;
+  }
+
+  [class*="__contentall"] {
+    display: block;
+    width: 90%;
+    max-width: 120rem;
+    margin: 0 auto;
+    @include m.desktop-ultra-hd {
+      max-width: 140rem;
+    }
+  }
+  body {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.6;
+     min-height: 100vh;
+     overflow-x: hidden;
+     position: relative;
+  }
+
+  a{
+   font-family: var(--font-primary); 
+  }
+  input{
+    font-family: var(--font-primary);
+  }

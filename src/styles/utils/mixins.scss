@@ -1,0 +1,78 @@
+@use "../base/variables" as v;
+
+/* Mixin para teléfonos pequeños */
+@mixin phone-x1 {
+  @media (max-width: v.$phone-x1) {
+    @content;
+  }
+}
+
+/* Mixin para teléfonos estándar */
+@mixin phone-x2 {
+  @media (max-width: v.$phone-x2) {
+    @content;
+  }
+}
+
+/* Mixin para teléfonos medianos */
+@mixin phone-medium {
+  @media (max-width: v.$phone-medium) {
+    @content;
+  }
+}
+
+/* Mixin para teléfonos grandes */
+@mixin phone-large {
+  @media (max-width: v.$phone-large) {
+    @content;
+  }
+}
+
+/* Mixin para tablets pequeñas */
+@mixin tablet-small {
+  @media (max-width: v.$tablet-small) {
+    @content;
+  }
+}
+
+/* Mixin para tablets estándar */
+@mixin tablet {
+  @media (max-width: v.$tablet) {
+    @content;
+  }
+}
+
+/* Mixin para tablets grandes */
+@mixin tablet-large {
+  @media (max-width: v.$tablet-large) {
+    @content;
+  }
+}
+
+/* Mixin para desktops pequeños */
+@mixin desktop-small {
+  @media (min-width: v.$desktop-small) {
+    @content;
+  }
+}
+
+/* Mixin para desktops medianos */
+@mixin desktop-medium {
+  @media (min-width: v.$desktop-medium) {
+    @content;
+  }
+}
+
+/* Mixin para desktops grandes */
+@mixin desktop-full {
+  @media (min-width: v.$desktop-full) {
+    @content;
+  }
+}
+
+/* Mixin para desktops ultra HD */
+@mixin desktop-ultra-hd {
+  @media (min-width: v.$desktop-ultra-hd) {
+    @content;
+  }
+}

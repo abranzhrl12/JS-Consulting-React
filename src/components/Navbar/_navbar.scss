@@ -1,0 +1,32 @@
+
+@use "../../styles//utils/mixins.scss" as m;
+@use '../../styles/base/globales' as g;
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background-color: transparent;
+  padding: 0.9rem 2rem;
+  display: flex;
+  align-items: center;
+ background: var(--background-primary);
+  transition: background-color 0.3s ease;
+
+  &__logo {
+    z-index: 100;
+    cursor: pointer;
+  }
+
+  &__Icon {
+    z-index: 100;
+    display: flex;
+    align-items: center;
+
+    @include m.desktop-small {
+      display: none;
+    }
+  }
+}
