@@ -1,0 +1,292 @@
+
+@use '../../styles/utils/mixins.scss' as m;
+.curso-plantilla{
+    width: 100%;
+    height: 58rem;
+    padding: 1rem 0;
+    border: 1rem solid #FF3E33;
+    position: relative;
+    box-sizing: border-box;
+    @include m.tablet {
+        overflow: hidden;
+    
+    }
+    @include m.desktop-ultra-hd {
+        border: 2rem solid #FF3E33;
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #13124A;
+        z-index: -1;
+        clip-path: polygon(25% 0%, 100% 0, 100% 22%, 44% 40%, 0 92%, 0 0);
+        @include m.tablet {
+            clip-path: polygon(100% 0, 100% 25%, 55% 46%, 30% 100%, 0 100%, 0 0);
+
+
+        }
+        @include m.desktop-small {
+            clip-path: polygon(72% 0, 44% 52%, 38% 100%, 0 100%, 0 0);
+        }
+    }
+    &::after{
+        // content: url('/Assets/svg/LineasCardPlantilla.svg');
+        content: "";
+        position: absolute;
+        display: block;
+        width: 11rem;
+        height:11rem;
+        background-image: url(/assets/home/LineasCardPlantilla.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        top: 57%;
+        right: 8.5%;
+        z-index: -1;
+        @include m.desktop-small {
+            top: 5%;
+            right: 3%;
+        }
+    }
+    &__titulo-principal{
+    
+        padding: 0 3rem;
+        font-size: 2.1rem;
+        font-style: italic;
+        display: flex;
+        gap: 0.5rem;
+        line-height: 1.3;
+        position: relative;
+        @include m.tablet {
+            padding: unset;
+            padding-top: 2rem;
+            padding-left: 5rem;
+            font-size: 3.2rem;
+           
+        }
+        @include m.desktop-small {
+            // margin-top: 0.8rem;
+        }
+    }
+    &__titulo-imagen{
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+      
+        display: block;
+        width: 4rem;
+        @include m.tablet {
+          width: 8rem;
+        }
+        @include m.desktop-small {
+            
+        position: relative;
+        top: -2.5rem;
+            
+        }
+        // margin-left: -4rem;
+        // margin-top: -3.5rem;
+    }
+    &__titulo-texto{
+        width: 15rem;
+        @include m.tablet {
+           width: 25rem; 
+        }
+    }
+    &__content-central{
+        width: 100%;
+        height: 66%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        @include m.tablet {
+            height: 62%;
+          
+     
+        }
+    }
+    &__flexcontent{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-shrink: 0;
+    padding: 0 1rem;
+    gap: 2rem;
+    justify-content: space-between;
+    
+    @include m.tablet {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+
+        gap:5rem;
+    }
+    }
+    &__mode{
+        display: inline-flex;
+        flex-direction: column;
+        transform: scale(.9);
+        margin-top: -.5rem;
+        margin-left: 1rem;
+        @include m.tablet {
+            width: 13.4rem;
+            margin-left: 3rem;
+            // z-index: 999;
+            font-size:2.3rem;
+            font-weight: 500;
+            padding-bottom: 3rem;
+            align-self: flex-start;
+            margin-top: 0.5rem;
+        }
+      @include m.desktop-small {
+          margin-top: unset;
+      }
+    }
+    &__start{
+        flex-shrink: 0;
+        display: block;
+        width: 55%;
+        height: 100%;
+        z-index: 100;
+        font-weight: 600;
+        font-style: italic;
+        letter-spacing: 1px;
+        @include m.tablet {
+            padding-top: 8rem;
+          
+            align-self: flex-end;
+        }
+        @include m.desktop-small {
+         padding-top: 20rem;   
+        }
+    }
+    &__start-titlecircle{
+        width: 105%;
+        background-color: #FF3E33;
+
+        border-radius: 50%;
+
+        border: 1rem solid #13124A;
+        aspect-ratio: 1; /* Esto asegura que el alto sea igual al ancho */
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        justify-content: center;
+        align-items: center;
+       
+        text-align: center;
+        max-width: 25rem;
+        font-size: 1.4rem;
+        margin-top: 1rem;
+        
+        @include m.phone-x1 {
+            width: 100%;
+        }
+
+        @include m.phone-x2 {
+            font-size: 1.5rem;
+        }
+        @include m.tablet-large {
+            font-size: 1.8rem;
+            scale: .9;
+        }
+        @include m.tablet {
+            scale: 1;
+             width: 56%;
+            font-size: 1.6rem;
+            margin-top: -2rem;
+            margin-left: 10rem;
+        }
+        
+         @include m.desktop-ultra-hd {
+            scale: 1.2;
+         }
+    }
+    &__start-first{
+        @include m.tablet {
+            font-size: 1.9rem;
+        }
+        @include m.desktop-small {
+           font-size: 2.1rem; 
+        }
+    }
+    &__start-cta{
+        width: 13rem;
+        text-wrap: balance;
+        padding: 0 1rem;
+        @include m.tablet {
+            width: auto;
+            font-size: 1.8rem;
+        }
+        @include m.desktop-small {
+            font-size: 2rem;
+        }
+    }
+    &__figure-img-circle{
+        width: 70%;
+        position: absolute;
+        border-radius: 50%;
+        border:1rem solid #13124A;
+        overflow: hidden;
+        margin-left: -6rem;
+        margin-bottom: -8rem;
+        @include m.tablet-large {
+            max-width: 53%;
+        }
+        @include m.tablet {
+            width: 48%;
+            max-width: 42rem;
+            margin-top: -10rem;
+        }
+        @include m.desktop-small {
+            margin-top: -8rem;
+            margin-left: -18%;
+        }
+        @include m.desktop-ultra-hd {
+            margin-top: -15rem;
+            scale: 1.1;
+        }
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+           
+        }
+    }
+    &__contact{
+        color: #13124A;
+        line-height: 1.3;
+       
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-left: -0.9rem; 
+        @include m.phone-x1 {
+            margin-left: 0;
+        }
+        @include m.tablet {
+            position: absolute;
+            align-items: flex-end;
+            right: 11%;
+            bottom: 3%;
+        }
+        @include m.desktop-small {
+            right: 5%;
+            flex-direction: row;
+            gap: 3rem;
+        }
+    }
+    &__contact-item{
+        width: 80%;
+        display: flex;
+        gap: 1rem;
+    }
+}

@@ -2,3 +2,14 @@
 @use "./utils/mixins.scss" as *;
 @use '../components/Navbar/index.scss' as *;
 @use '../components/buttonHamburger/hamburger.scss' as *;
+@use '../components/Header/header.scss' as *;
+@use '../components/ContactButton/ContactButton.scss' as *;
+@use '../components/Carousel/CursoCarousel.scss' as *;
+@use '../components/CarouselItemCursos/CursoPlantilla.scss' as *;
+@use '../components/BrochureCarrousel/Brochure.scss' as *;
+@use '../components/BrochureItem/Brochurecard.scss' as *;
+@use '../components/SectionCertifiacion/Certificacion.scss'as *;
+@use '../components/SectModalidades/SectModalida.scss' as *;
+@use '../components/ModalidadItem/ModalidadesItem.scss' as *;
+@use '../components/SectClientes/Clientes.scss' as m;
+@use '../components/footer/footer.scss' as *;

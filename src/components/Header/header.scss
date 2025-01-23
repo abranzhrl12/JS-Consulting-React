@@ -1,0 +1,83 @@
+@use '../../styles/utils/mixins.scss' as m;
+.header{
+    width: 100%;
+    height: 85rem;
+    // background-image: url(/Assets/Img/bg-Image-header.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    // @include m.phone-x1 {
+    //     height: 70rem;
+    // }
+    @include m.tablet {
+        background-size: cover;
+        background-position: bottom right;
+    }
+    &--bg{
+        background-image: url(/Assets/Img/bg-Image-header-Servicios-Mobile.webp);
+        @include m.tablet {
+            background-image: url(/Assets/Img/bg-Image-header-Servicios-Tablet.webp);
+        }
+        @include m.desktop-small {
+            background-image: url(/Assets/Img/bg-Image-header-Servicios-Desk.webp);
+        }
+    }
+    &__title-principal{
+        margin-top: 2rem;
+        font-size: var(--font-size-primary-mobile);
+        @include m.tablet {
+            font-size: var(--font-size-primary-tablet);
+        }
+        @include m.desktop-small {
+            font-size: var(--font-size-primary-desktop);
+        }
+    }
+   &__video{
+    display: block;
+    position: absolute;
+    z-index: -2;
+    // width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter:contrast(200%) brightness(65%) saturate(150%)
+    ;
+   }
+   &::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #171732a0;
+    z-index: -1;
+
+   }
+
+    &__contentall{
+        padding: 0 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: end;
+      
+    }
+    &__paragraph{
+        text-wrap: pretty;
+        padding-left: 4rem;
+        font-size: var(--font-size-paragraph-mobile);
+
+        @include m.tablet {
+            font-size: var(--font-size-paragraph-tablet);
+        }
+        @include m.desktop-small {
+                  width: 70%;
+                  margin-left: auto;
+                  font-size: var(--font-size-paragraph-desktop);
+      }
+    }
+  
+}

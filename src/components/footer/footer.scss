@@ -1,0 +1,185 @@
+@use '../../styles/utils/mixins.scss' as m;
+.footer{
+    color: white;
+    background: #13124A;
+   
+    figure{
+        padding: 4rem 0;
+    }
+    &__icons{
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    &__content-Whatssap{
+        display: flex;
+        align-items: center;
+        p{
+            background: white;color: black;
+            margin-right: 1rem;
+            padding: 0.5rem 1.4rem;
+            border-radius: 1rem;
+            letter-spacing: 1px;
+            display: none;
+            @include m.desktop-small {
+                display: block;
+            }
+        }
+    }
+    &__icon-whatssap{
+        width: 5.5rem;
+        cursor: pointer;
+        transition: transform .3s;
+        display: none;
+        @include m.tablet {
+            
+            display: block;
+        }
+        &:hover{
+            transform: scale(1.02);
+        }
+        @include m.desktop-small {
+         
+        }
+       
+    }
+    &__list-content{
+        display: flex; 
+        align-items: flex-start;
+        gap: 2.5rem;
+       
+     }
+    &__grid{
+        width: 100%;
+        
+       @include m.tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Define 3 columnas de igual tamaño */
+        grid-template-rows: auto auto;        /* Define 2 filas de tamaño automático */
+        grid-template-areas: 
+          "list list"
+          "navigation1 navigation2";
+       }
+       @include m.desktop-small {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Define 3 columnas de igual tamaño */
+       
+        grid-template-areas: 
+          "list navigation1 navigation2";
+        place-items: center;
+       }
+    }
+     &__list-info{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+      
+        @include m.tablet {
+            grid-area: list;
+            padding-bottom: 2.5rem;
+        }
+        @include m.desktop-small {
+            padding-bottom: 0;
+            width: 38rem;
+        }
+        img{
+            @include m.desktop-small {
+                
+                width: 2.5rem;
+            }
+        }
+     }
+  
+     &__navigation{
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+        padding-top: 2.5rem;
+        @include m.tablet {
+            padding: 0;
+            grid-area: navigation1;
+        }
+        @include m.desktop-small {
+            padding-left: 10rem;
+        }
+        h3{
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #FF3E33;
+        }
+    
+     }  
+     &__navigation-2{
+        @include m.tablet {
+            grid-area: navigation2;
+        }
+     }   
+     &__navigation-list{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        li{
+            transition: .3s all;
+            color: white;
+            transition: text-decoration-thickness 0.3s ease, text-decoration-color 0.3s ease;
+            &:hover{
+                cursor: pointer;
+                text-decoration: underline;
+                text-underline-offset: 2px;
+       
+
+            }
+        }
+        a{
+            color: white;
+            
+        }
+       
+     }
+     &__navigation-list-url{
+        text-decoration: none;
+        color: white;
+     }
+     &__social-media{
+        padding-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding-bottom: 4rem;
+        @include m.desktop-small {
+            // max-width: 120rem;
+            display: flex;
+            align-items: flex-end;
+            margin-top: -0.3rem;
+            padding-right: 10.6%;
+            transform: scale(1.1);
+
+            
+        }
+      
+        ul{
+            display: flex;
+            gap: 1.5rem;
+            li{
+                cursor: pointer;
+                transition: transform .4s;
+                &:hover{
+                    transform: scale(1.04);
+                }
+            }
+        }
+        span{
+            color: #FF3E33;
+        }
+     }
+     &__copy{
+        text-align: center;
+        padding-bottom: 2rem;
+        font-size: 1.8rem;
+        font-weight: 600;
+     }
+     &__copy-span{
+        font-weight: 300!important;
+       
+     }
+}

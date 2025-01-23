@@ -1,0 +1,40 @@
+@use '../../styles/utils/mixins.scss';
+.brochure-card {
+  display: flex;
+  flex-direction: column;
+  width: 22rem;
+  padding: 0.5rem 2rem;
+  gap: 3rem;
+  user-select: none;
+}
+
+.brochure-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1rem;
+  font-size: 2.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #13124A;
+  gap: 1rem;
+}
+
+.brochure-card__content {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.brochure-card__img {
+  display: block;
+  width: 100%;
+}
+
+.brochure-card__description {
+  font-weight: 600;
+}
+
+.brochure-card__download {
+  color: #FF3E33;
+  font-weight: 600;
+}

@@ -1,0 +1,103 @@
+@use '../../styles/utils/mixins.scss' as m;
+
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .Clientes {
+    padding: 4rem 0;
+    background: #fff;
+    &__contentall {
+      // width: 100%;
+        max-width: 100rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+        @include m.desktop-small {
+            max-width: unset;
+        }
+      }
+      &__Carrousel {
+        position: relative;
+        overflow: hidden;
+      }
+      
+  }
+
+
+ 
+@keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .logos {
+    overflow: hidden;
+    padding-top: 2rem;
+     padding: 60px 0; 
+    background: white;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logos:before,
+  .logos:after {
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+  
+  .logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.189));
+    @media (min-width: 768px) {
+      background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.888));
+     }
+  }
+  
+  .logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.123));
+    @media (min-width: 768px) {
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.888));
+     }
+  }
+  
+  // .logos:hover .logos-slide {
+  //   animation-play-state: paused;
+  // }
+  
+  .logos-slide {
+    display: inline-block;
+    animation: 8s slide infinite linear;
+  }
+  
+  .logos-slide img {
+    height: 50px;
+    margin: 0 20px;
+    @media (min-width: 768px) {
+      height: 80;
+      margin: 0 40px;
+    }
+    @media (min-width: 1024px) {
+      height: 80px;
+      margin: 0 50px;
+    }
+  }
+  
+  
+
+  

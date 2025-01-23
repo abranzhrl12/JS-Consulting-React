@@ -55,7 +55,7 @@ export const Navbar = () => {
       href: "https://sigecap.jsconsulting.pe/sigecapexamen/login",
       title: "Accede al aula virtual",
       isExternal: true,
-      icon: "/public/assets/home/IconPc.svg", // Icono para Aula Virtual
+      icon: "/assets/home/IconPc.svg", // Icono para Aula Virtual
     },
   ];
 
@@ -63,10 +63,7 @@ export const Navbar = () => {
     <nav className="navbar">
       {/* logo */}
       <a href="/" className="navbar__logo" title="Inicio - Js consulting">
-        <img
-          src="/public/assets/home/Svg_Logo_Fast.svg"
-          alt="Logo de JS Consulting"
-        />
+        <img src="/assets/home/Svg_Logo_Fast.svg" alt="Logo de JS Consulting" />
       </a>
       {/* Lista Navegación */}
       <ul className={`navbar__list ${isMenuOpen ? "active" : ""}`}>

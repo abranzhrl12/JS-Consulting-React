@@ -1,0 +1,37 @@
+  
+  @use '../../styles/utils/mixins.scss' as m;
+  
+  .contact-button{
+        all: unset;
+        display: block;
+        background: #E60F0F;
+        width: 14.5rem;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        border-radius: .7rem;
+        margin-left: auto;
+        margin-top: 1rem;
+        transition: transform .3s ;
+        cursor: pointer;
+        @include m.tablet {
+            width: 18rem;
+            height: 4rem;
+        }
+        &__link{
+            text-decoration: none;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+        }
+        &:hover{
+            transform: scale(1.02);
+        }
+        &__ico{
+            width: 2rem;
+        }
+  }
+  
