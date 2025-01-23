@@ -1,3 +1,5 @@
+@use '../../styles/utils/mixins.scss' as m;
+
 .hamburger {
     display: block;
     width: 3.6rem;
@@ -6,12 +8,17 @@
     flex-direction: column;
     gap: 0.7rem;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
   background: transparent;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   outline: none;
   border: none;
+  
+    @include m.desktop-small {
+        display: none;
+    }
 }
 
 .line {

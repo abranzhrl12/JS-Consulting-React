@@ -69,7 +69,7 @@ export const Navbar = () => {
         />
       </a>
       {/* Lista Navegación */}
-      <ul className="navbar__list">
+      <ul className={`navbar__list ${isMenuOpen ? "active" : ""}`}>
         {navItems.map((item, index) => (
           <li key={index} className="navbar__item">
             {item.isExternal ? (

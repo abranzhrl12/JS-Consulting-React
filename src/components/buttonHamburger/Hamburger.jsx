@@ -1,7 +1,8 @@
 export const Hamburger = ({ isOpen, onClick }) => {
+  console.log(isOpen);
   return (
     <button
-      className={`hamburger navbar__Icon ${isOpen ? "is-open" : ""}`}
+      className={`hamburger navbar__Icon ${isOpen ? "active" : ""}`}
       aria-label="Abrir menú de navegación"
       aria-controls="navbarMenu"
       aria-expanded={isOpen}
