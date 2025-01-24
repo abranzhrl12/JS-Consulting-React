@@ -11,5 +11,13 @@
 @use '../components/SectionCertifiacion/Certificacion.scss'as *;
 @use '../components/SectModalidades/SectModalida.scss' as *;
 @use '../components/ModalidadItem/ModalidadesItem.scss' as *;
-@use '../components/SectClientes/Clientes.scss' as m;
+@use '../components/SectClientes/Clientes.scss' as *;
 @use '../components/footer/footer.scss' as *;
+@use '../components/SectionInformation/information.scss' as *;
+@use '../components/SectValores/valores.scss' as *;
+@use '../components/SectVision/mision-section.scss' as *;
+@use '../components/SectAbout/about-us-section.scss' as *;
+@use '../components/Sect-Frequently-questions/frequently-questions.scss' as *;
+@use '../components/ServiceCourses/servcios.scss' as *;
+@use '../components//ServiceCourses/contenido.scss' as *;
+@use '../components/SectionCursosServices/PlantillaCard.scss' as *;

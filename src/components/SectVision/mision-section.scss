@@ -1,0 +1,55 @@
+@use '../../styles/utils/mixins.scss' as m;
+.mission-section{
+    border-top: 2.5rem solid #FF3E33;
+    padding: 6rem 0;
+    background: #F4F8FB;
+    &__contentall{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
+        justify-content: center;
+        align-items: center;
+        @include m.tablet {
+            flex-direction: row;
+        }
+        @include m.desktop-small {
+            gap: 6rem;
+        }
+    }
+    &__card{
+        width: 30rem;
+        height:35rem;
+        outline: 1px solid red;
+        border-radius: 1.9rem;
+        padding: 1.5rem 2rem;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        gap: 1.3rem;
+        @include m.tablet {
+            width: 28rem;
+            height: 37rem;
+        }
+        @include m.desktop-small {
+            width: 38rem;
+            height: 34rem;
+           
+        }
+        h3{
+            text-align: center;
+            color: #13124A;
+            font-size: 2.8rem;
+        }
+        img{
+            display: block;
+            margin: 0 auto;
+        }
+        p{
+            padding: 0 1rem;
+            text-align: center;
+            color: #13124A;
+        }
+        
+    }
+}

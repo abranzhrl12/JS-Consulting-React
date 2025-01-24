@@ -1,0 +1,87 @@
+@use '../../styles/utils/mixins.scss' as m;
+.Services{
+    background:#F4F8FB ;
+    &__contentall {
+        width: 85%;
+        margin: 0 auto;
+        padding: 5rem 0;
+        gap: 4rem;
+      
+    }
+    &__grid{
+        width: 100%;
+        display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+
+  gap: 20px;
+
+    }
+}
+.Services-Card{
+    width: 25.2rem;
+   
+    height: 50rem;
+    background: #FFFFFF;
+    text-align: center;
+    color: #13124A;
+    transition: transform .3s;
+
+    cursor: pointer;
+ 
+    display: grid;
+grid-template-columns: 1fr;
+  grid-template-rows: fit-content max-content max-content;
+gap: 0.5rem;
+    // padding: 1rem;
+   @include m.tablet {
+       width: 31.2rem;
+   }
+   @include m.desktop-small {
+       width: 36rem;
+   }
+    &__img{
+        display: block;
+        width: 100%;
+       
+        grid-template-rows: subgrid;
+        
+       
+    }
+    &:hover{
+        transform: scale(1.02);
+    }
+   
+    &__title{
+        padding-bottom: 1rem;
+        grid-row: 2/3;
+      
+        grid-template-rows: subgrid;
+    }
+    &__paragraph{
+    //   grid-row: 3/ -1;
+     
+    //   grid-template-rows: subgrid;
+    }
+}
+
+// &__card-title{
+//    
+// }
+// }
+
+
+
+
+
+
+
+// .card1{
+//     grid-area: card1;
+// }
+// .card2{
+//     grid-area: card2;
+// }
+// .card3{
+//     grid-area: card3;
+// }

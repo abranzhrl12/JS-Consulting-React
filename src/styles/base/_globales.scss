@@ -27,9 +27,12 @@ html {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
-    list-style: none;
+
     text-decoration: none;
     scrollbar-width: none;
+  }
+  li{
+    list-style: none;
   }
 
   [class*="__contentall"] {

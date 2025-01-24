@@ -1,0 +1,70 @@
+
+@use '../../styles/utils/mixins.scss' as m;
+.Section-Cursos {
+    width: 100%;
+    
+
+    &__contentall{
+        display: block;
+        width: 90%;
+        max-width: 120rem;
+
+        margin: 2rem auto!important;
+        
+    }
+    &__grid {
+      
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(90%,22rem), 1fr));
+      place-items: center;
+      gap: 2rem; /* Espaciado entre los elementos */
+      @include m.tablet {
+        grid-template-columns: repeat(auto-fill, minmax(27rem, 1fr));
+      }
+      @include m.desktop-small {
+        grid-template-columns: repeat(auto-fill, minmax(34rem, 1fr));
+      }
+    //   background: red;
+    }
+  
+    &__card {
+    
+      width: 23rem; /* Permite que se ajuste al contenedor */
+      background: white;
+         height: auto;
+      border-radius: 0.5rem;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    border-radius: .8rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform .2s ease-in-out;
+    &:hover{
+        transform: scale(1.02);
+    }
+      @include m.tablet {
+        width: 27rem;
+      }
+      @include m.desktop-small {
+        width: 34rem;
+      }
+    }
+    &__card-img{
+        display: block;
+        width: 100%;
+        object-fit: cover;
+    }
+    &__card-paragraph{
+        position: absolute;
+        width: 85%; 
+        background-color: #FF3E33CC;
+        // border: 1px solid #ccc;
+        padding: 1rem 2rem;
+        bottom: 2rem;
+        display: flex;
+        color: white;
+        border-radius: 1rem;
+       
+    }
+  }

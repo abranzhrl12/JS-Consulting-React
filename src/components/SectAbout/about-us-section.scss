@@ -1,0 +1,152 @@
+
+@use '../../styles/utils/mixins.scss' as m; 
+.about-us-section{
+    width: 100% ;
+    background: white;
+    border-top: 2rem solid #13124A;
+    &__contentall{
+        padding: 4.5rem 0;
+        display: grid;
+        gap: 3rem;
+        @include m.desktop-small {
+            display: flex;
+            flex-direction: column;
+            gap: 6rem;
+        }
+    }
+    &__container-card{
+      
+        display: grid;
+        gap: 3rem;
+        @include m.desktop-small {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 3rem;
+            // align-items: center;
+            // gap: 6rem;
+            
+        }
+        &--reverse{
+            @include m.desktop-small {
+                flex-direction: row-reverse;
+                height: 100%;
+            }
+        }
+    }
+    &__card{
+        background:#F4F8FB ;
+        padding: 2rem 2.2rem;
+        border-radius: 1.2rem;
+        
+        @include m.desktop-small {
+            flex: 3;
+            // flex-grow: 1;
+        }
+        &--mt{
+            height: auto;
+            @include m.desktop-small {
+                flex: 3;
+            height: 32rem;
+            }
+          
+        }
+    }
+    &__card-contentTitle{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 2.5rem;
+    }
+    &__card-title{
+        color:#FF3E33 ;
+        text-wrap: balance;
+        font-size: 2.4rem;
+        line-height: 1.3;
+        width: 85%;
+        @include m.tablet {
+            width: 90%;
+        }
+    }
+    &__card-paragraph{
+        color: #13124A;
+        text-align: left;
+    }
+    &__contentIMG{
+      background: #13124A;
+        @include m.desktop-small {
+            height: 34.7rem;
+        }
+       
+        &--order{
+           
+            border-radius: .5rem;
+            @include m.desktop-small {
+                order: -1;
+            }
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            width: inherit;
+            height: inherit;
+          
+            background: #b08e1ca0;
+          
+            pointer-events: none;
+            // display: var(--hide-after, block);
+        }
+       
+    }
+    &__content-videos{
+        width: 100%;
+        height: 100%;
+        background: rgba(15, 22, 86, 0.863);
+        padding: 1rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // &::after{
+        //     content: "";
+        //     position: absolute;
+        //     background-image: url(/Assets/Img//Nosotros/Iconplay.svg);
+        //     background-size: cover;
+        //     width: 5rem;
+        //     height: 5rem;
+        //     cursor: pointer;
+        //     transition: transform 0.3s ease, opacity 0.3s ease; /* Animación */
+        //     // background: rgb(14, 10, 10);
+            
+        // }
+        &:hover::after {
+            transform: scale(1.2); /* Ampliar un 20% al pasar el mouse */
+            opacity: 0.8; /* Reducir opacidad para un efecto sutil */
+        }
+    }
+    &__videos{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border: none;
+         aspect-ratio: 16/9;
+       
+        
+       
+        
+    }
+   &__videoImg1{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    // margin-top: 3rem;
+    @include m.desktop-small {
+        flex: 3;
+    }
+
+    
+   }
+}
+

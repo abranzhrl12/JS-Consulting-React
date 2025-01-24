@@ -16,13 +16,13 @@ export const Navbar = () => {
     },
     {
       label: "Nosotros",
-      href: "/",
+      href: "/nosotros",
       title: "Conoce más sobre JS Consulting",
       isExternal: false,
     },
     {
       label: "Servicios",
-      href: "/",
+      href: "/servicios",
       title: "Descubre nuestros servicios en seguridad laboral",
       isExternal: false,
     },

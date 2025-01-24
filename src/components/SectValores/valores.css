@@ -1,0 +1,51 @@
+@use '../../styles/utils/mixins.scss' as m;
+.valores {
+  width: 100%;
+  padding: 8rem 0;
+  border-top: 2.5rem solid #13124A;
+}
+
+.valores__title {
+  text-align: center;
+  color: #FF3E33;
+  font-size: 3.5rem;
+  padding-bottom: 3rem;
+}
+
+.valores__imagen {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.valores__imagen picture {
+  width: 90%;
+  max-width: 120rem;
+}
+
+.valores__imagen picture img {
+  width: 100%;
+}
+
+.valores a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background: #FF3E33;
+  display: inline-block;
+  width: 18.5rem;
+  height: 3.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto;
+  margin-top: 6rem;
+  border-radius: .8rem;
+  letter-spacing: 1px;
+}
+
+.valores p {
+  display: block;
+  text-align: center;
+  font-size: 1.7rem;
+}

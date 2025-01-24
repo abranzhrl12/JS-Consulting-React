@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banner con Bordes Transparentes</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #ffffff;
+      }
+
+      .discount-banner {
+        /* box-sizing: border-box; */
+        position: relative;
+        width: 20rem;
+        height: 10rem;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        /* background: red !important; */
+        border-top: 8px solid red; /* Borde superior más grueso */
+        border-right: 20px solid red;
+        border-bottom: 50px solid red; /* Borde inferior más pequeño */
+        border-left: 90px solid red; /* Borde izquierdo más ancho */
+        aspect-ratio: 16/9;
+        border-top-left-radius: 90px 25%;
+        border-bottom-left-radius: 120% 1%;
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+      }
+
+      .discount-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div className="discount-banner">
+      <div className="discount-text">-28%</div>
+    </div>
+  </body>
+</html>
