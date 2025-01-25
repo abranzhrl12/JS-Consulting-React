@@ -1,0 +1,62 @@
+@use '../../styles/utils/mixins.scss' as m;
+.section-contact-Map{
+ &__lineRed{
+    background: #FF3E33;
+    text-align: center;
+    color: white;
+    padding: 1rem 0;
+    border-bottom: 1.8rem solid #13124A;
+ }   
+ &__contentall{
+    width: 85%;
+    padding: 4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 120rem;
+    @include m.tablet {
+        
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+ }
+ &__info{
+    background: #F4F8FB;
+    padding: 3rem 2.5rem;
+    border-radius: 1.5rem;
+    @include m.tablet {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+ }
+ &__info-list{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+ }
+ &__info-btn{
+    all: unset;
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+    height: 4rem;
+    background: #FF3E33;
+    text-align: center;
+    color: white;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+ }
+ &__map{
+    border-radius: 1rem;
+    @include m.tablet {
+        height: 38rem;
+    }
+    @include m.desktop-small {
+        height: 44rem;
+    }
+ }
+}

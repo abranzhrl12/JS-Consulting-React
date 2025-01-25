@@ -21,3 +21,5 @@
 @use '../components/ServiceCourses/servcios.scss' as *;
 @use '../components//ServiceCourses/contenido.scss' as *;
 @use '../components/SectionCursosServices/PlantillaCard.scss' as *;
+@use '../components/SectContact/section-contact.scss' as *;
+@use '../components/SectContactMap/section-contact-Map.scss' as *;

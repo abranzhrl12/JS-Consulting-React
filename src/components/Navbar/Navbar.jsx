@@ -29,7 +29,7 @@ export const Navbar = () => {
     },
     {
       label: "Contáctanos",
-      href: "/",
+      href: "/Contact",
       title: "Contáctanos para más información",
       isExternal: false,
     },

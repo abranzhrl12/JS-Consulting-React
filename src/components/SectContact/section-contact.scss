@@ -1,0 +1,118 @@
+@use '../../styles/utils/mixins.scss' as m;
+
+.section-contact{
+    padding: 5rem 0;
+    &__contentall{
+        width: 85%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        @include m.tablet {
+            width: 75%;
+        }
+        @include m.desktop-small {
+            width: 90%;
+            max-width: 120rem;
+            flex-direction: row;
+           display: grid;
+           grid-template-columns: repeat(2,1fr);
+        }
+       
+    }
+    &__info{
+        width: 100%;
+        background: #13124A;
+        color: white;
+        padding: 3.5rem 2.5rem;
+        border-radius: 1.6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        @include m.desktop-small {
+            padding: 5rem 2.5rem;
+            justify-content: center;
+        }
+        figure{
+            background: white;
+            padding: 2rem;
+            width: 5.6rem;
+            height: 5.6rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            
+        }
+        img{
+            display: block;
+            position: relative;
+           
+        }
+        span{
+            font-weight: bold;
+        }
+    }
+    &__info-content{
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        @include m.tablet {
+            flex-direction: row;
+            gap: 3rem;
+        }
+    }
+    &__form{
+        border: .1rem solid #E0E0E0;
+        border-radius: .8rem;
+        padding: 3rem  2.5rem;
+        text-align: center;
+        h3{
+            font-size: 2.4rem;
+           
+        }
+    }
+    &__form-grid{
+        padding-top: 2.5rem;
+        display: grid;
+        gap: 2rem;
+        --radius:.8rem;
+        @include m.tablet {
+            gap: 2.8rem;
+        }
+        @include m.desktop-small {
+            padding-top: 4rem;
+            gap: 3.5rem;
+        }
+       
+    }
+    &__form-input{
+        all: unset;
+        outline: .1rem solid #FF3E33;
+        border-radius: var(--radius);
+        text-align: left;
+        padding: 1rem 2.5rem;
+        &::placeholder{
+            color: #C2BABA;
+        };
+       
+     
+    }
+    &__form-textArea{
+        all: unset;
+        padding: 1rem 2.5rem;
+        outline: .1rem solid #FF3E33;
+        border-radius: var(--radius);
+        text-align: left;
+        &::placeholder{
+            color: #C2BABA;
+        }
+    }
+    &__form-btn{
+        all: unset;
+        height: 4rem;
+        background: #FF3E33;
+        color: white;
+        border-radius: var(--radius);
+    }
+}

@@ -10,11 +10,11 @@ export const SectValores = () => {
           {" "}
           <picture>
             <source
-              srcSet="/Assets/Img/nuestros_valores_desk.webp"
+              srcSet="/public/assets/Nosotros/nuestros_valores_desk.webp"
               media="(min-width: 1024px)"
             />
             <source
-              srcSet="/Assets/Img/nuestros_valores_tablet.webp"
+              srcSet="/public/assets/Nosotros/nuestros_valores_tablet.webp"
               media="(min-width: 768px)"
             />
             <img

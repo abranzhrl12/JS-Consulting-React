@@ -4,7 +4,7 @@ import { HomePage } from "./pages/home/HomePage";
 import { Nosotros } from "./pages/About/Nosotros";
 import { Services } from "./pages/Services/Services";
 import { ServicesLayout } from "./components/layouts/ServicesLayout";
-
+import { Contact } from "./pages/Contact/Contact";
 export const App = () => {
   return (
     <Router>
@@ -24,6 +24,7 @@ export const App = () => {
             path="servicios/:serviceId"
             element={<ServicesLayout />}
           />{" "}
+          <Route path="Contact" element={<Contact />} />{" "}
           {/* Detalles de servicio */}
         </Route>
       </Routes>

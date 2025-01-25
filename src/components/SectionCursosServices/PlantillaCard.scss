@@ -13,7 +13,7 @@
         
     }
     &__grid {
-      
+      padding: 4rem 0;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(min(90%,22rem), 1fr));
       place-items: center;
@@ -66,5 +66,30 @@
         color: white;
         border-radius: 1rem;
        
+    }
+    &__pagination{
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    &__pagination-btn{
+      border: none;
+      width: 4rem;
+      height: 4rem;
+      cursor: pointer;
+      border-radius: 50%;
+      border: .1rem solid #FF3E33;
+      color: #A8A8A8;
+      font-weight: 700;
+      transition: transform .2s,background .2s;
+
+      &.active{
+        background: #FF3E33;
+        color: white;
+
+      }
+      &:hover{
+        transform: scale(1.05);
+      }
     }
   }
