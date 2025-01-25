@@ -3,7 +3,8 @@ export const services = [
   {
     id: "control-riesgos",
     title: "Cursos para Control de Riesgos Críticos",
-    description: "Formación integral para trabajos de alto riesgo",
+    description:
+      "Formación integral para trabajos de alto riesgo nuevos asdjasf fdskfsd dfjksdfñkjf fdskjlhfdns fdslfkjsdlkfjsdfñdskfñsdk",
     details: `
     Prepárate para un entorno laboral seguro y eficiente.
     En nuestra plataforma, ofrecemos una formación integral para aquellos que se enfrentan a trabajos de alto riesgo.

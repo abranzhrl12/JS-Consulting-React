@@ -11,13 +11,13 @@
     align-items: center;
     position: relative;
     overflow: hidden;
-    // @include m.phone-x1 {
-    //     height: 70rem;
-    // }
-    @include m.tablet {
-        background-size: cover;
-        background-position: bottom right;
+    @include m.phone-x1 {
+        height: 70rem;
     }
+    // @include m.tablet {
+    //     background-size: cover;
+    //     background-position: bottom right;
+    // }
     &--bg{
         background-image: url(/Assets/Img/bg-Image-header-Servicios-Mobile.webp);
         @include m.tablet {

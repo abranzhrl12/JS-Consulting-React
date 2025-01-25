@@ -1,6 +1,7 @@
 @use '../../styles/utils/mixins.scss' as m;
 .Services{
     background:#F4F8FB ;
+   
     &__contentall {
         width: 85%;
         margin: 0 auto;
@@ -11,40 +12,49 @@
     &__grid{
         width: 100%;
         display: grid;
+       
    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   grid-template-rows: auto;
+   gap: 3rem;
 
 
-  gap: 20px;
+
 
     }
 }
 .Services-Card{
+    display: block;
     width: 25.2rem;
-   
-    height: 50rem;
-    background: #FFFFFF;
+    background: rgb(255, 255, 255);
     text-align: center;
-    color: #13124A;
     transition: transform .3s;
-
     cursor: pointer;
- 
     display: grid;
-grid-template-columns: 1fr;
-  grid-template-rows: fit-content max-content max-content;
-gap: 0.5rem;
-    // padding: 1rem;
+    grid-template-rows:subgrid;
+    grid-row: span 3;
+    gap: 0;
+    gap: 0.4rem;
+    padding: 1rem;
+    text-decoration: none;
+    color: #13124A;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.177);
+    opacity: 1;
+    @starting-style {
+        opacity: 0;
+        
+      }
    @include m.tablet {
        width: 31.2rem;
    }
    @include m.desktop-small {
        width: 36rem;
    }
+  
     &__img{
         display: block;
         width: 100%;
-       
-        grid-template-rows: subgrid;
+      
+     
         
        
     }
@@ -53,15 +63,16 @@ gap: 0.5rem;
     }
    
     &__title{
-        padding-bottom: 1rem;
-        grid-row: 2/3;
+    
+        line-height: 1.2;
       
-        grid-template-rows: subgrid;
+        
     }
     &__paragraph{
-    //   grid-row: 3/ -1;
-     
-    //   grid-template-rows: subgrid;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
     }
 }
 

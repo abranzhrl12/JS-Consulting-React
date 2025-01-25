@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Hamburger } from "../buttonHamburger/Hamburger";
+import { Link } from "react-router-dom";
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -87,9 +88,16 @@ export const Navbar = () => {
                 {item.label}
               </a>
             ) : (
-              <a href={item.href} title={item.title} className="navbar__link">
+              <Link to={item.href} title={item.title} className="navbar__link">
+                {item.icon && (
+                  <img
+                    src={item.icon}
+                    alt={`Icono de ${item.label}`}
+                    className="navbar__icon"
+                  />
+                )}
                 {item.label}
-              </a>
+              </Link>
             )}
           </li>
         ))}

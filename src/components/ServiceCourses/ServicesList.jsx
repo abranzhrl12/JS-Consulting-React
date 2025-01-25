@@ -10,21 +10,16 @@ export const ServicesList = () => {
             <Link
               key={service.id}
               to={`/servicios/${service.id}`}
-              className="details-button"
+              className="Services-Card"
             >
-              <div className="Services-Card">
-                <img
-                  className="Services-Card__img"
-                  src={service.image}
-                  alt={service.title}
-                  loading="lazy"
-                />
-
-                <h3 className="Services-Card__title">{service.title}</h3>
-                <p className="Services-Card__paragraph">
-                  {service.description}
-                </p>
-              </div>
+              <img
+                className="Services-Card__img"
+                src={service.image}
+                alt={service.title}
+                loading="lazy"
+              />
+              <h3 className="Services-Card__title">{service.title}</h3>
+              <p className="Services-Card__paragraph">{service.description}</p>
             </Link>
           ))}
         </div>
