@@ -1,6 +1,6 @@
-import { Navbar } from "../Navbar/Navbar";
-import { Header } from "../Header/Header";
-import { Footer } from "../footer/Footer";
+import { Navbar } from "../components/Navbar/Navbar";
+import { Header } from "../components/Header/Header";
+import { Footer } from "../components/footer/Footer";
 import { Outlet, useLocation } from "react-router-dom";
 export const MainLayout = ({ videoUrl, title, children }) => {
   const location = useLocation();

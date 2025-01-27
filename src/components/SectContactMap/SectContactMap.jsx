@@ -1,3 +1,4 @@
+import { ButtonInfoRed } from "../buttoninfored/ButtonInfoRed";
 export const SectContactMap = () => {
   return (
     <section className="section-contact-Map" id="DondeUbicarnos">
@@ -19,13 +20,16 @@ export const SectContactMap = () => {
               <span> administracion@jsconsulting.pe </span>
             </li>
           </ul>
-          <button className="section-contact-Map__info-btn">
+          <ButtonInfoRed>
             <img
               src="/Assets/Img/ContactanosIMG/IconWhiteWhatssap.svg"
               alt=""
             />
             Más Información
-          </button>
+          </ButtonInfoRed>
+          {/* <button className="section-contact-Map__info-btn">
+         
+          </button> */}
         </div>
         <div id="map"></div>
       </div>

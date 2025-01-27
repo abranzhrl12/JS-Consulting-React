@@ -1,3 +1,6 @@
+import { validarEmail } from "../../utils/validacion";
+import { InputField } from "../InputField/InputField";
+import { ContactForm } from "../ContactForm/ContactForm";
 export const SectContact = () => {
   return (
     <section className="section-contact">
@@ -50,7 +53,8 @@ export const SectContact = () => {
             </div>
           </div>
         </div>
-        <form
+        <ContactForm />
+        {/* <form
           id="contactForm"
           className="section-contact__form"
           method="POST"
@@ -67,13 +71,14 @@ export const SectContact = () => {
               placeholder="Nombre y Apellido"
               required
             />
-            <input
-              className="section-contact__form-input"
+            <InputField
               type="email"
-              id="email"
-              name="email"
-              placeholder="Su email"
-              required
+              label="Correo Electrónico"
+              placeholder="Ingrese su email"
+              value={formData.email}
+              onChange={(value) => setFormData({ ...formData, email: value })}
+              validate={validarEmail}
+              errorMessage="Ingrese un email válido"
             />
             <input
               className="section-contact__form-input"
@@ -98,7 +103,7 @@ export const SectContact = () => {
               Cotizar
             </button>
           </div>
-        </form>
+        </form> */}
       </div>
     </section>
   );

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
   return (
     <footer className="footer" aria-label="Pie de página de JS Consulting">
@@ -95,12 +97,15 @@ export const Footer = () => {
                 <a href="/Servicios.html">Servicios</a>
               </li>
               <li>
-                <a
+                <Link className="footer__navigation-list-url" to="/Reclamos">
+                  Buzón de quejas, reclamos, sugerencias
+                </Link>
+                {/* <a
                   className="footer__navigation-list-url"
                   href="/Reclamos.html"
                 >
                   Buzón de quejas, reclamos, sugerencias
-                </a>
+                </a> */}
               </li>
               <li>
                 <a href="/Work-Nosotros.html"> Trabaja con nosotros</a>

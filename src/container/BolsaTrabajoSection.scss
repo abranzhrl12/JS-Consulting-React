@@ -1,0 +1,47 @@
+@use '../styles/utils/mixins.scss' as m;
+.bolsa-trabajo-section{
+    padding: 5rem 0;
+    &__contentall{
+        width: 85%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        @include m.desktop-small {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 2.2rem;
+        @include m.tablet {
+            width: 60%;
+            margin: 0 auto;  
+        }
+    }
+    &__socials{
+        padding: 0 3rem;
+        h2{
+            text-align: center;
+        }
+        ul{   
+            padding: 1rem;
+            background: #FF3E33;
+            border-radius: .6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            @include m.tablet {          
+                max-width: 25rem;
+                margin: 0 auto;
+            }
+        }
+        img{
+            display: block;
+        }
+    }
+}

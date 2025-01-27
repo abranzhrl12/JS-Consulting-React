@@ -1,0 +1,41 @@
+.text-area-field {
+    margin-bottom: 1rem;
+  
+    &__label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      color: #333;
+    }
+  
+    &__input {
+        border: none;
+      width: 100%;
+      display: block;
+      min-height: 100px;
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      font-size: 1.7rem;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+       outline: .1rem solid #FF3E33;
+  
+      &:focus {
+        border-color: #007bff;
+ 
+        outline: .2rem solid #FF3E33;
+      }
+  
+      &--error {
+
+        // border-color: #e63946;
+      }
+    }
+  
+    &__error {
+      color: #e63946;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+  }
+  

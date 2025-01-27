@@ -14,6 +14,7 @@
   --font-size-paragraph-mobile: 1.5rem;
   --font-size-paragraph-tablet: 1.8rem;
   --font-size-paragraph-desktop: 2rem;
+  --color-bg-buttons: #FF3E33;
 }
 
 html {
@@ -30,6 +31,7 @@ html {
 
     text-decoration: none;
     scrollbar-width: none;
+    font-family: var(--font-primary);
   }
   li{
     list-style: none;

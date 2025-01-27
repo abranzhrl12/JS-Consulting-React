@@ -35,7 +35,7 @@ export const Navbar = () => {
     },
     {
       label: "Trabaja con Nosotros",
-      href: "/Work-Nosotros.html",
+      href: "/Trabaja-con-Nosotros",
       title: "Únete a nuestro equipo",
       isExternal: false,
     },
