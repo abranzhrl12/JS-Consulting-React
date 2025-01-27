@@ -76,59 +76,109 @@ export const coursesData = [
           "/public/assets/CURSOSDINAMICOS-IMG/Img-Card-Curso-TrabajosMetalLiquido.webp",
         alt: "Metal fundido",
       },
+      {
+        id: "Metal fundido 2",
+        serviceId: "control-riesgos",
+        title: "Metal fundido 2",
+        image:
+          "/public/assets/CURSOSDINAMICOS-IMG/IMAGEN10-CONTROL-RIESGOS.webp",
+        alt: "Metal fundido",
+      },
+      {
+        id: "Metal fundido 3",
+        serviceId: "control-riesgos",
+        title: "Metal fundido 3",
+        image:
+          "/public/assets/CURSOSDINAMICOS-IMG/IMAGEN11-CONTROL-RIESGOS.webp",
+        alt: "Metal fundido",
+      },
+      {
+        id: "Metal fundido 4",
+        serviceId: "control-riesgos",
+        title: "Metal fundido 4",
+        image:
+          "/public/assets/CURSOSDINAMICOS-IMG/IMAGEN12-CONTROL-RIESGOS.webp",
+        alt: "Metal fundido",
+      },
+      {
+        id: "Metal fundido 5",
+        serviceId: "control-riesgos",
+        title: "Metal fundido 5",
+        image:
+          "/public/assets/CURSOSDINAMICOS-IMG/IMAGEN13-CONTROL-RIESGOS.webp",
+        alt: "Metal fundido",
+      },
     ],
   },
   {
     serviceId: "decreto-024",
-    itemsPerPage: 2, // Elementos por página
+    itemsPerPage: 3, // Elementos por página
     totalItems: 6, // Total de cursos
     courses: [
       {
         id: "iperc",
         serviceId: "decreto-024",
         title: "IPERC",
-        image: "/public/assets/CURSOSDINAMICOS-IMG/Img-Card-Curso-IPERC.webp",
+        image: "/public/assets/CURSOSDINAMICOS-IMG/IMGDECRETO1.webp",
         alt: "IPERC",
       },
       {
-        id: "gestión-seguridad",
+        id: "Mapa de Riesgos",
         serviceId: "decreto-024",
-        title: "Gestión de Seguridad",
-        image:
-          "/public/assets/CURSOSDINAMICOS-IMG/Img-Card-Curso-GestionSeguridad.webp",
-        alt: "Gestión de Seguridad",
+        title: "Mapa de Riesgos",
+        image: "/public/assets/CURSOSDINAMICOS-IMG/IMGDECRETO2.webp",
+        alt: "Mapa de Riesgos",
       },
       {
-        id: "simulacros",
+        id: "El uso de  (EPP)",
         serviceId: "decreto-024",
-        title: "Simulacros de Emergencia",
-        image:
-          "/public/assets/CURSOSDINAMICOS-IMG/Img-Card-Curso-Simulacros.webp",
-        alt: "Simulacros de Emergencia",
+        title: "El uso de  (EPP)",
+        image: "/public/assets/CURSOSDINAMICOS-IMG/IMGDECRETO3.webp",
+        alt: "El uso de  (EPP)",
       },
       {
-        id: "inspecciones",
+        id: "Riesgos Psicosociales",
         serviceId: "decreto-024",
-        title: "Inspecciones de Seguridad",
-        image:
-          "/public/assets/CURSOSDINAMICOS-IMG/Img-Card-Curso-Inspecciones.webp",
-        alt: "Inspecciones de Seguridad",
+        title: "Riesgos Psicosociales",
+        image: "/public/assets/CURSOSDINAMICOS-IMG/IMGDECRETO4.webp",
+        alt: "Riesgos Psicosociales",
       },
       {
-        id: "evaluaciones",
+        id: "Primeros Auxilios",
         serviceId: "decreto-024",
-        title: "Evaluaciones de Riesgos",
-        image:
-          "/public/assets/CURSOSDINAMICOS-IMG/Img-Card-Curso-Evaluaciones.webp",
-        alt: "Evaluaciones de Riesgos",
+        title: "Primeros Auxilios",
+        image: "/public/assets/CURSOSDINAMICOS-IMG/IMGDECRETO5.webp",
+        alt: "Primeros Auxilios",
       },
       {
-        id: "consultoria",
+        id: "Seguridad en la Oficina y Ergonomía",
         serviceId: "decreto-024",
-        title: "Consultoría de Seguridad",
-        image:
-          "/public/assets/CURSOSDINAMICOS-IMG/Img-Card-Curso-Consultoria.webp",
-        alt: "Consultoría de Seguridad",
+        title: "Seguridad en la Oficina y Ergonomía",
+        image: "/public/assets/CURSOSDINAMICOS-IMG/IMGDECRETO6.webp",
+        alt: "Seguridad en la Oficina y Ergonomía",
+      },
+
+      {
+        id: "Prevención y Protección Contra Incendios.",
+        serviceId: "decreto-024",
+        title: "Prevención y Protección Contra Incendios.",
+        image: "/public/assets/CURSOSDINAMICOS-IMG/IMGDECRETO7.webp",
+        alt: "Prevención y Protección Contra Incendios.",
+      },
+
+      {
+        id: "Prevención de Accidente por Gaseamiento",
+        serviceId: "decreto-024",
+        title: "Prevención de Accidente por Gaseamiento",
+        image: "/public/assets/CURSOSDINAMICOS-IMG/IMGDECRETO8.webp",
+        alt: "Prevención de Accidente por Gaseamiento",
+      },
+      {
+        id: "Prevención en el Consumo de Alcohol y Drogas",
+        serviceId: "decreto-024",
+        title: "Prevención en el Consumo de Alcohol y Drogas",
+        image: "/public/assets/CURSOSDINAMICOS-IMG/IMGDECRETO9.webp",
+        alt: "Prevención en el Consumo de Alcohol y Drogas",
       },
     ],
   },
