@@ -17,11 +17,13 @@
     }
     
     h3{
-        text-align: center;
+        text-align: left;
+        color: #13124A;
     }
     p{
+        color: #13124A99;
         @include m.desktop-small {
-            text-align: center
+            text-align: left
         }
     }
     &__grid{

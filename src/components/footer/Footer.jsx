@@ -75,9 +75,12 @@ export const Footer = () => {
                 <a href="/Nosotros.html#Valores"> Nuestros Valores</a>
               </li>
               <li>
-                <a href="/Nosotros.html#misionvision">
+                {/* <a href="/Nosotros.html#misionvision">
                   Nuestra misión y visión
-                </a>
+                </a> */}
+                <Link to="/nosotros#misionvision" className="navbar__link">
+                  Ir a contacto
+                </Link>
               </li>
               <li>
                 <a href="https://jsconsulting.pe/wp-content/uploads/2024/04/Politica-de-Gestion-Integrada..pdf">
@@ -94,7 +97,9 @@ export const Footer = () => {
             <h3>Más</h3>
             <ul className="footer__navigation-list">
               <li>
-                <a href="/Servicios.html">Servicios</a>
+                <Link className="footer__navigation-list-url" to="/servicios">
+                  Servicios
+                </Link>
               </li>
               <li>
                 <Link className="footer__navigation-list-url" to="/Reclamos">
@@ -108,10 +113,17 @@ export const Footer = () => {
                 </a> */}
               </li>
               <li>
-                <a href="/Work-Nosotros.html"> Trabaja con nosotros</a>
+                <Link
+                  className="footer__navigation-list-url"
+                  to="/Trabaja-con-Nosotros"
+                >
+                  Trabaja con nosotros
+                </Link>
               </li>
               <li>
-                <a href="/Contacto.html">Contáctanos</a>
+                <Link className="footer__navigation-list-url" to="/Contact">
+                  Contáctanos
+                </Link>
               </li>
               <li>
                 <a

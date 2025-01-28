@@ -16,10 +16,10 @@ export const FileItem = ({ file, onRemove }) => {
   const [isRemoving, setIsRemoving] = useState(false);
 
   const handleRemove = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Evita recarga si es un form
     setIsRemoving(true);
     setTimeout(() => {
-      onRemove(file);
+      onRemove(file); // Solo envío el file
     }, 300);
   };
 

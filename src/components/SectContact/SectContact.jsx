@@ -1,6 +1,10 @@
-import { validarEmail } from "../../utils/validacion";
-import { InputField } from "../InputField/InputField";
+// import { validarEmail } from "../../utils/validacion";
+// import { InputField } from "../InputField/InputField";
 import { ContactForm } from "../ContactForm/ContactForm";
+import iconcalendared from "../../assets/iconhorariosred.svg";
+import iconadministracion from "../../assets/iconadministracionred.svg";
+import iconcordinacion from "../../assets/Iconcordiancionred.svg";
+import iconatencioncliente from "../../assets/iconatencionred.svg";
 export const SectContact = () => {
   return (
     <section className="section-contact">
@@ -8,7 +12,7 @@ export const SectContact = () => {
         <div className="section-contact__info">
           <div className="section-contact__info-content">
             <figure>
-              <img src="../Assets/svg/IconRedHorario.svg" alt="" />
+              <img src={iconcalendared} alt="" />
             </figure>
             <div>
               <h5>Horario</h5>
@@ -23,7 +27,7 @@ export const SectContact = () => {
 
           <div className="section-contact__info-content">
             <figure>
-              <img src="../Assets/svg/IconRedAdministracion.svg" alt="" />
+              <img src={iconadministracion} alt="" />
             </figure>
             <div>
               <h5>Administración</h5>
@@ -34,7 +38,7 @@ export const SectContact = () => {
 
           <div className="section-contact__info-content">
             <figure>
-              <img src="../Assets/svg/IconRedCordinacion.svg" alt="" />
+              <img src={iconcordinacion} alt="" />
             </figure>
             <div>
               <h5>Coordinación</h5>
@@ -44,7 +48,7 @@ export const SectContact = () => {
           </div>
           <div className="section-contact__info-content">
             <figure>
-              <img src="../Assets/svg/IconRedAtencionCliente.svg" alt="" />
+              <img src={iconatencioncliente} alt="" />
             </figure>
             <div>
               <h5>Atención al Cliente</h5>
@@ -54,56 +58,6 @@ export const SectContact = () => {
           </div>
         </div>
         <ContactForm />
-        {/* <form
-          id="contactForm"
-          className="section-contact__form"
-          method="POST"
-          action="procesar_formulario.php"
-        >
-          <h3>Contáctanos</h3>
-          <p>Déjenos sus datos y nos pondremos en contacto</p>
-          <div className="section-contact__form-grid">
-            <input
-              className="section-contact__form-input"
-              type="text"
-              id="nombre_apellido"
-              name="nombre_apellido"
-              placeholder="Nombre y Apellido"
-              required
-            />
-            <InputField
-              type="email"
-              label="Correo Electrónico"
-              placeholder="Ingrese su email"
-              value={formData.email}
-              onChange={(value) => setFormData({ ...formData, email: value })}
-              validate={validarEmail}
-              errorMessage="Ingrese un email válido"
-            />
-            <input
-              className="section-contact__form-input"
-              type="text"
-              id="telefono"
-              name="telefono"
-              placeholder="Teléfono Celular"
-              required
-            />
-            <textarea
-              className="section-contact__form-textArea"
-              id="mensaje"
-              name="mensaje"
-              placeholder="Mensaje/Requerimiento"
-              required
-            ></textarea>
-            <button
-              style={{ cursor: "pointer" }}
-              className="section-contact__form-btn"
-              type="submit"
-            >
-              Cotizar
-            </button>
-          </div>
-        </form> */}
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ import { Nosotros } from "./pages/About/Nosotros";
 import { Services } from "./pages/Services/Services";
 import { ServicesLayout } from "./layouts/ServicesLayout";
 import { Contact } from "./pages/Contact/Contact";
-import { WorkNosotros } from "./pages/work-nosotros/WorkNosotros";
+import { WorkNosotros } from "./pages/work-nosotros/workNosotros";
 import { Reclamos } from "./pages/Reclamos/Reclamos";
 
 export const App = () => {

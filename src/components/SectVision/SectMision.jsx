@@ -14,7 +14,7 @@ export const SectMision = () => {
             Misión
           </h3>
           <img
-            src="/public/assets/Nosotros/IconMision.svg"
+            src="/assets/Nosotros/IconMision.svg"
             alt="Ícono representando la misión de JS Consulting"
             className="mission-section__icon"
           />
@@ -35,7 +35,7 @@ export const SectMision = () => {
             Visión
           </h3>
           <img
-            src="/public/assets/Nosotros/Icon-vision.svg"
+            src="/assets/Nosotros/Icon-vision.svg"
             alt="Ícono representando la visión de JS Consulting"
             className="mission-section__icon"
           />

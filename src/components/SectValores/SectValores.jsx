@@ -10,15 +10,15 @@ export const SectValores = () => {
           {" "}
           <picture>
             <source
-              srcSet="/public/assets/Nosotros/nuestros_valores_desk.webp"
+              srcSet="/assets/Nosotros/nuestros_valores_desk.webp"
               media="(min-width: 1024px)"
             />
             <source
-              srcSet="/public/assets/Nosotros/nuestros_valores_tablet.webp"
+              srcSet="/assets/Nosotros/nuestros_valores_tablet.webp"
               media="(min-width: 768px)"
             />
             <img
-              src="/public/assets/Nosotros/img-Valores-mobile.webp"
+              src="/assets/Nosotros/img-Valores-mobile.webp"
               alt="Imagen representando los valores corporativos de JS Consulting"
               className="valores__img"
             />

@@ -1,4 +1,5 @@
 import { ButtonInfoRed } from "../buttoninfored/ButtonInfoRed";
+import { GoogleMap } from "../GoogleMap/GoogleMap";
 export const SectContactMap = () => {
   return (
     <section className="section-contact-Map" id="DondeUbicarnos">
@@ -31,7 +32,8 @@ export const SectContactMap = () => {
          
           </button> */}
         </div>
-        <div id="map"></div>
+        <GoogleMap />
+        {/* <div id="map"></div> */}
       </div>
     </section>
   );

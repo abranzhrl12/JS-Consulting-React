@@ -17,7 +17,7 @@ export const services = [
       "Herramientas Manuales y de Poder",
       "Izaje de Cargas y más",
     ],
-    image: "/public/assets/Servicios/Services1.webp",
+    image: "/assets/Servicios/Services1.webp",
   },
   {
     id: "decreto-024",
@@ -32,12 +32,12 @@ export const services = [
       "Gestión de Seguridad",
       "Simulacros de emergencia",
     ],
-    image: "/public/assets/Servicios/Services2.webp",
+    image: "/assets/Servicios/Services2.webp",
   },
   {
     id: "decreto-025",
     title: "Decreto Supremo 024 / ANEXO 06",
     description: "Capacitaciones para ambientes seguros",
-    image: "/public/assets/Servicios/Services3.webp",
+    image: "/assets/Servicios/Services3.webp",
   },
 ];

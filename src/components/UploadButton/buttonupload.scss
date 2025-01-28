@@ -1,10 +1,13 @@
 // UploadButton.scss
+@use '../../styles/utils/mixins.scss' as m;
+
 .upload-button {
   display: flex;
   flex-direction: column-reverse;
   // justify-content: flex-start;
   align-items: flex-start;
   gap: 1rem;
+ 
     &__wrapper {
       display: flex;
       flex-direction: column-;
@@ -70,10 +73,16 @@
     }
   
     &__files {
-      display: flex;
-    
-      gap: 1.5rem;
+      
       margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 1rem;
+      @include m.tablet {
+        display: flex;
+    
+        gap: 1.5rem;
+      }
     }
   
     &__file {

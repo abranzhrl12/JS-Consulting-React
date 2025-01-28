@@ -35,7 +35,7 @@ export const FrequentlyQuestions = () => {
                 onClick={() => toggleItem(0)}
               >
                 <img
-                  src="/public/assets/Nosotros/arrrowQuestionRed.svg"
+                  src="/assets/Nosotros/arrrowQuestionRed.svg"
                   alt="Pregunta sobre inscripción"
                 />
                 <p>¿Cómo me inscribo en los cursos?</p>
@@ -59,7 +59,7 @@ export const FrequentlyQuestions = () => {
                 onClick={() => toggleItem(1)}
               >
                 <img
-                  src="/public/assets/Nosotros/arrrowQuestionRed.svg"
+                  src="/assets/Nosotros/arrrowQuestionRed.svg"
                   alt="Pregunta sobre inscripción"
                 />
                 <p>
@@ -83,7 +83,7 @@ export const FrequentlyQuestions = () => {
                 onClick={() => toggleItem(2)}
               >
                 <img
-                  src="/public/assets/Nosotros/arrrowQuestionRed.svg"
+                  src="/assets/Nosotros/arrrowQuestionRed.svg"
                   alt="Pregunta sobre inscripción"
                 />
                 <p>¿Puedo inscribirme a un curso de forma particular?</p>
@@ -106,7 +106,7 @@ export const FrequentlyQuestions = () => {
                 onClick={() => toggleItem(7)}
               >
                 <img
-                  src="/public/assets/Nosotros/arrrowQuestionRed.svg"
+                  src="/assets/Nosotros/arrrowQuestionRed.svg"
                   alt="Pregunta sobre inscripción"
                 />
                 <p>¿En cuánto tiempo obtengo mi certificado?</p>
@@ -132,7 +132,7 @@ export const FrequentlyQuestions = () => {
                 onClick={() => toggleItem(3)}
               >
                 <img
-                  src="/public/assets/Nosotros/arrrowQuestionRed.svg"
+                  src="/assets/Nosotros/arrrowQuestionRed.svg"
                   alt="Pregunta sobre inscripción"
                 />
                 <p>¿En cuánto tiempo obtengo mi certificado?</p>
@@ -154,7 +154,7 @@ export const FrequentlyQuestions = () => {
                 onClick={() => toggleItem(4)}
               >
                 <img
-                  src="/public/assets/Nosotros/arrrowQuestionRed.svg"
+                  src="/assets/Nosotros/arrrowQuestionRed.svg"
                   alt="Pregunta sobre inscripción"
                 />
                 <p>
@@ -179,7 +179,7 @@ export const FrequentlyQuestions = () => {
                 onClick={() => toggleItem(5)}
               >
                 <img
-                  src="/public/assets/Nosotros/arrrowQuestionRed.svg"
+                  src="/assets/Nosotros/arrrowQuestionRed.svg"
                   alt="Pregunta sobre inscripción"
                 />
                 <p>¿Qué debo llevar para mi curso presencial?</p>
@@ -202,7 +202,7 @@ export const FrequentlyQuestions = () => {
                 onClick={() => toggleItem(6)}
               >
                 <img
-                  src="/public/assets/Nosotros/arrrowQuestionRed.svg"
+                  src="/assets/Nosotros/arrrowQuestionRed.svg"
                   alt="Pregunta sobre inscripción"
                 />
                 <p>¿En cuánto tiempo podré ver mis facturas en el sistema?</p>

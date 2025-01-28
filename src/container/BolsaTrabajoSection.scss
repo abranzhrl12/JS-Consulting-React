@@ -1,6 +1,8 @@
 @use '../styles/utils/mixins.scss' as m;
 .bolsa-trabajo-section{
     padding: 5rem 0;
+    display: grid;
+   
     &__contentall{
         width: 85%;
         margin: 0 auto;
@@ -12,11 +14,18 @@
             align-items: center;
         }
     }
+    &__form{
+        @include m.desktop-small {
+            width: 70%;
+        }
+        
+    }
     &__info{
         display: flex;
         flex-direction: column;
         gap: 2rem;
         padding: 0 2.2rem;
+        color: #13124A;
         @include m.tablet {
             width: 60%;
             margin: 0 auto;  
@@ -45,3 +54,4 @@
         }
     }
 }
+

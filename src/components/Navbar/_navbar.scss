@@ -32,3 +32,11 @@
     }
   }
 }
+
+.navbar.transparent {
+  background-color: transparent;
+}
+
+.navbar.scrolled {
+  background-color: var(--background-primary); /* Color de fondo cuando se hace scroll */
+}

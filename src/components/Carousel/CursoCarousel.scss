@@ -2,6 +2,7 @@
 @use '../../styles/base/globales';
 
 .Curso-Carousel{
+    width: 100%;
     color: white;
    
     @include m.tablet {

@@ -6,7 +6,7 @@ export const SectInformation = () => {
           <div className="information__items">
             <figure className="information__figure">
               <img
-                src="/public/assets/Nosotros/IconBook.svg"
+                src="/assets/Nosotros/IconBook.svg"
                 alt="Icono de libro representando capacitaciones realizadas"
                 className="information__icon"
               />
@@ -20,7 +20,7 @@ export const SectInformation = () => {
           <div className="information__items">
             <figure className="information__figure">
               <img
-                src="/public/assets/Nosotros/IconBook.svg"
+                src="/assets/Nosotros/IconBook.svg"
                 alt="Icono de pulgar hacia arriba representando clientes satisfechos"
                 className="information__icon"
               />
@@ -34,7 +34,7 @@ export const SectInformation = () => {
           <div className="information__items">
             <figure className="information__figure">
               <img
-                src="/public/assets/Nosotros/IconLIKE.svg"
+                src="/assets/Nosotros/IconLIKE.svg"
                 alt="Icono de personas representando nuevos clientes"
                 className="information__icon"
               />

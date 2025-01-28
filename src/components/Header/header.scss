@@ -45,6 +45,19 @@
     z-index: -1;
 
    }
+   &--contactanos{
+    &::after{
+        background: #1717323f;
+    }
+   }
+   &--worknostros{
+    height: 65rem;
+    &::after{
+        background: #1717323f;
+    }
+   
+   }
+ 
 //    &--servicios::after{
 //     display: none;
 //    }
@@ -59,6 +72,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: bottom;
       
     }
    }
@@ -70,6 +84,7 @@
         text-align: end;
       
     }
+    
     &__paragraph{
         text-wrap: pretty;
         padding-left: 4rem;
@@ -85,4 +100,13 @@
       }
     }
   
+}
+
+.header {
+    &--worknostros{
+        height: 65rem;
+      img{
+        object-position: top;
+      }
+ }
 }
