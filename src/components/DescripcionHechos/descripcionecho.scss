@@ -1,0 +1,22 @@
+@use '../../styles/utils/mixins.scss' as m;
+
+
+.descripcion-hechos{
+    border: 0.73px solid #D6D6D6;
+    border-radius: 
+    .73rem;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 1rem;
+        @include m.tablet {
+            flex-direction: row;
+        }
+    }
+ 
+}

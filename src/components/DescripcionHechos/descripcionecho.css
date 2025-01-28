@@ -1,0 +1,15 @@
+.descripcion-hechos {
+  border: 0.73px solid #D6D6D6;
+  border-radius: .73rem;
+  padding: 2.5rem 2rem;
+}
+
+.descripcion-hechos__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.descripcion-hechos__info {
+  margin-bottom: 2rem;
+}

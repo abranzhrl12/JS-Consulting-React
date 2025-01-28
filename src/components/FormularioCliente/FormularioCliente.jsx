@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { InputField } from "../InputField/InputField";
 import { DropdownSelect } from "../DropdownSelect/DropdownSelect";
 import { CountryDropdown } from "../CountryDropdown/CountryDropdown";

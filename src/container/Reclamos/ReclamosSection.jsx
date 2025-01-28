@@ -3,6 +3,7 @@ import "./reclamos.scss";
 import logoBuzon from "../../assets/IconoBuzon.svg";
 import { InformacionReclamo } from "../../components/InformacionReclamo/InformacionReclamo";
 import { DescripcionHechos } from "../../components/DescripcionHechos/DescripcionHechos";
+import { SubmitButton } from "../../components/SubmitButton/SubmitButton";
 
 export const ReclamosSection = () => {
   const handleFormSubmit = (formData) => {
@@ -27,6 +28,7 @@ export const ReclamosSection = () => {
         <InformacionReclamo />
 
         <DescripcionHechos />
+        <SubmitButton className="submit-buttonreclamos">Enviar</SubmitButton>
       </div>
     </div>
   );
