@@ -50,6 +50,10 @@
         width: 34rem;
       }
     }
+    &__card-link{
+    display: flex;
+    justify-content: center;
+    }
     &__card-img{
         display: block;
         width: 100%;

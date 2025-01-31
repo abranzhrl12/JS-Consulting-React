@@ -9,6 +9,16 @@ export const Header = ({
   imageSources = {},
 }) => {
   const location = useLocation();
+
+  // Verifica si la URL es una subruta de "/servicios"
+  const shouldRenderHeader = !location.pathname.startsWith("/servicios/");
+
+  // Si estamos en una subruta de "/servicios", no renderizamos el Header
+  if (!shouldRenderHeader) {
+    return null; // No renderizamos el header si estamos en una subruta de "/servicios"
+  }
+
+  // Lógica para determinar si se debe mostrar el botón de contacto
   const shouldRenderButton = ["/", "/nosotros"].includes(location.pathname);
 
   return (

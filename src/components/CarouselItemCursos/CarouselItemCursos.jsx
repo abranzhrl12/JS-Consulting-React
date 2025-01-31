@@ -8,7 +8,7 @@ export const CarouselItemCursos = ({ curso }) => {
         <div className="curso-plantilla__titulo-principal">
           <h3 className="curso-plantilla__titulo-texto">{curso.title}</h3>
           <img
-            src="/public/assets/home/cursolinesred.svg"
+            src="/assets/home/cursolinesred.svg"
             alt=""
             className="curso-plantilla__titulo-imagen"
           />
@@ -19,7 +19,7 @@ export const CarouselItemCursos = ({ curso }) => {
               <span>Modalidad:</span>
               <span>{curso.modalidad}</span>
               <img
-                src="/public/assets/home/IconPresencialsvg.svg"
+                src="/assets/home/IconPresencialsvg.svg"
                 alt={`Modalidad ${curso.modalidad}`}
               />
             </div>
@@ -51,10 +51,7 @@ export const CarouselItemCursos = ({ curso }) => {
         </div>
         <div className="curso-plantilla__contact">
           <div className="curso-plantilla__contact-item">
-            <img
-              src="/public/assets/home/IconcardTelefono.svg"
-              alt="Teléfono"
-            />
+            <img src="/assets/home/IconcardTelefono.svg" alt="Teléfono" />
             <div>
               <span>Número:</span>
               <p>{curso.contacto.telefono}</p>
@@ -62,7 +59,7 @@ export const CarouselItemCursos = ({ curso }) => {
           </div>
           <div className="curso-plantilla__contact-item">
             <img
-              src="/public/assets/home/IconCardplantilla_Correo.svg"
+              src="/assets/home/IconCardplantilla_Correo.svg"
               alt="Correo electrónico"
             />
             <div>

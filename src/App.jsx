@@ -8,6 +8,8 @@ import { ServicesLayout } from "./layouts/ServicesLayout";
 import { Contact } from "./pages/Contact/Contact";
 import { WorkNosotros } from "./pages/work-nosotros/workNosotros";
 import { Reclamos } from "./pages/Reclamos/Reclamos";
+import { ContainerTemario } from "./container/ContainerTemario/ContainerTemario";
+import { Temarios } from "./pages/Temarios/Temarios";
 
 export const App = () => {
   return (
@@ -23,6 +25,10 @@ export const App = () => {
           <Route path="nosotros" element={<Nosotros />} />
           <Route path="servicios" element={<Services />} />
           <Route path="servicios/:serviceId" element={<ServicesLayout />} />
+          <Route
+            path="servicios/:serviceId/:courseSlug"
+            element={<Temarios />} // Aquí se mostrará el contenido del curso
+          />
           <Route path="Contact" element={<Contact />} />
           <Route path="Trabaja-con-Nosotros" element={<WorkNosotros />} />
         </Route>

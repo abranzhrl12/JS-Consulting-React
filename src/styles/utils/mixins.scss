@@ -76,3 +76,27 @@
     @content;
   }
 }
+
+
+$breakpoints: (
+  phone-x1: v.$phone-x1,
+  phone-x2: v.$phone-x2,
+  phone-medium: v.$phone-medium,
+  phone-large: v.$phone-large,
+  tablet-small: v.$tablet-small,
+  tablet: v.$tablet,
+  tablet-large: v.$tablet-large,
+  desktop-small: v.$desktop-small,
+  desktop-medium: v.$desktop-medium,
+  desktop-full: v.$desktop-full,
+  desktop-ultra-hd: v.$desktop-ultra-hd
+);
+@mixin respond($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @error "Breakpoint '#{$breakpoint}' no está definido en $breakpoints.";
+  }
+}

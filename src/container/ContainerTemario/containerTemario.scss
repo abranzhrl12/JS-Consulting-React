@@ -1,0 +1,11 @@
+@use "../../styles/utils/mixins.scss" as *;
+.Temarios{
+    padding: 10rem 0;
+    // @include respond(phone-x2) {
+    //     padding: 1.5rem;
+    //     background: red;
+    //   }
+    //   @include respond(tablet){
+    //     background: blue;
+    //   }
+}

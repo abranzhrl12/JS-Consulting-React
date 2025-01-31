@@ -23,11 +23,12 @@
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
       white-space: normal;
+      text-overflow: ellipsis;
       @include m.tablet {
           width: auto;
 
       }
-        text-overflow: ellipsis;
+    
         &:hover{
             color: blue;
         }

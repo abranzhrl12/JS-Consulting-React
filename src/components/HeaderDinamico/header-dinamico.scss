@@ -1,0 +1,21 @@
+@use "../../styles/utils/mixins.scss" as m;
+ 
+.header-dinamico{
+    width: 100%;
+    height: 23rem;
+    overflow: hidden;
+    @include m.tablet {
+        height: 33rem;
+    }
+    @include m.desktop-small {
+        height: 40.8rem;
+    }
+    @include m.desktop-ultra-hd {
+        height: 50.8rem;
+    }
+    &__img{
+        display: block;
+        width: 100%;
+        object-fit: cover;
+    }
+}

@@ -2,13 +2,11 @@
 
 
 .descripcion-hechos{
-    border: 0.73px solid #D6D6D6;
-    border-radius: 
-    .73rem;
-    padding: 2.5rem 2rem;
+   
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
+    color: #13124A;
     &__content{
         display: flex;
         flex-direction: column;
@@ -17,6 +15,15 @@
         @include m.tablet {
             flex-direction: row;
         }
+    }
+    &__contents{
+        border: 0.73px solid #D6D6D6;
+        border-radius: 
+        .73rem;
+        padding: 2.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
     }
  
 }

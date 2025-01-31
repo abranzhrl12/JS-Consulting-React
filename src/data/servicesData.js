@@ -18,6 +18,7 @@ export const services = [
       "Izaje de Cargas y más",
     ],
     image: "/assets/Servicios/Services1.webp",
+    banner: "/assets/Servicios/bannerServioControlDeRiesgos.webp",
   },
   {
     id: "decreto-024",
@@ -33,11 +34,13 @@ export const services = [
       "Simulacros de emergencia",
     ],
     image: "/assets/Servicios/Services2.webp",
+    banner: "/public/assets/Servicios/BannerServicioDecretoSupremo.webp",
   },
   {
     id: "decreto-025",
     title: "Decreto Supremo 024 / ANEXO 06",
     description: "Capacitaciones para ambientes seguros",
     image: "/assets/Servicios/Services3.webp",
+    banner: "/public/assets/Servicios/BannerServiciodecreto-025.webp",
   },
 ];

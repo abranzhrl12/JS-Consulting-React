@@ -235,55 +235,65 @@ export const DescripcionHechos = forwardRef((props, ref) => {
 
   return (
     <div className="descripcion-hechos">
-      <h2 className="descripcion-hechos__title">Descripción de los hechos</h2>
+      <div className="descripcion-hechos__contents">
+        <h2 className="descripcion-hechos__title">Descripción de los hechos</h2>
 
-      <TextAreaField
-        value={formData.detalleQueja}
-        onChange={(value) => handleInputChange("detalleQueja", value)}
-      />
-
-      <p className="descripcion-hechos__info">
-        Si su reclamo o queja está asociado a una reserva, ingresa la siguiente
-        información
-      </p>
-
-      <div className="descripcion-hechos__content">
-        <InputField
-          className="descripcion-hechos__input"
-          placeholder="Código de reserva"
-          value={formData.codigoReserva}
-          onChange={(value) => handleInputChange("codigoReserva", value)}
+        <TextAreaField
+          value={formData.detalleQueja}
+          onChange={(value) => handleInputChange("detalleQueja", value)}
         />
 
-        <InputField
-          className="descripcion-hechos__input"
-          placeholder="RUC"
-          value={formData.ruc}
-          onChange={(value) => handleInputChange("ruc", value)}
-        />
+        <p className="descripcion-hechos__info">
+          Si su reclamo o queja está asociado a una reserva, ingresa la
+          siguiente información
+        </p>
 
-        <InputField
-          className="descripcion-hechos__input"
-          placeholder="Empresa"
-          value={formData.empresa}
-          onChange={(value) => handleInputChange("empresa", value)}
-        />
+        <div className="descripcion-hechos__content">
+          <InputField
+            className="descripcion-hechos__input"
+            placeholder="Código de reserva"
+            value={formData.codigoReserva}
+            onChange={(value) => handleInputChange("codigoReserva", value)}
+          />
+
+          <InputField
+            className="descripcion-hechos__input"
+            placeholder="RUC"
+            value={formData.ruc}
+            onChange={(value) => handleInputChange("ruc", value)}
+          />
+
+          <InputField
+            className="descripcion-hechos__input"
+            placeholder="Empresa"
+            value={formData.empresa}
+            onChange={(value) => handleInputChange("empresa", value)}
+          />
+        </div>
       </div>
+      <div className="descripcion-hechos__contents">
+        <h3>Datos Adjuntos</h3>
+        <p>
+          Si dispones de documentos relacionados a tu caso, puedes adjuntarlos.
+          Es opcional.Puedes adjuntar máximo 3 archivos. Formatos permitidos:
+          pdf, doc, jpeg, jpg, png.
+        </p>
 
-      {/* Ahora, pasamos el ref para que DescripcionHechos pueda controlar los archivos */}
-      <UploadButton ref={uploadButtonRef}>
-        {({ selectedFiles, error }) => (
-          <>
-            <img src={uploadicon} alt="Subir archivo" />
-            <span className="text">
-              {selectedFiles.length > 0
-                ? `${selectedFiles.length} archivo(s) listo(s)`
-                : "Adjuntar Archivo"}
-            </span>
-            {error && <div className="error">{error}</div>}
-          </>
-        )}
-      </UploadButton>
+        {/* Ahora, pasamos el ref para que DescripcionHechos pueda controlar los archivos */}
+        <UploadButton ref={uploadButtonRef}>
+          {({ selectedFiles, error }) => (
+            <>
+              <img src={uploadicon} alt="Subir archivo" />
+              <span className="text">
+                {selectedFiles.length > 0
+                  ? `${selectedFiles.length} archivo(s) listo(s)`
+                  : "Adjuntar Archivo"}
+              </span>
+              {error && <div className="error">{error}</div>}
+            </>
+          )}
+        </UploadButton>
+      </div>
     </div>
   );
 });
