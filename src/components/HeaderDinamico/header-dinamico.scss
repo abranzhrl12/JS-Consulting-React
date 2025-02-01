@@ -1,21 +1,54 @@
 @use "../../styles/utils/mixins.scss" as m;
- 
-.header-dinamico{
+
+.header-dinamico {
+  width: 100%;
+  height: 23rem;
+  min-height: 23rem;
+  overflow: hidden;
+
+  @include m.tablet {
+    height: 33rem;
+    min-height: 33rem;
+  }
+  @include m.desktop-small {
+    height: 40.8rem;
+    min-height: 40.8rem;
+  }
+  @include m.desktop-ultra-hd {
+    height: 50.8rem;
+    min-height: 50.8rem;
+  }
+
+  &__img-wrapper {
+    position: relative;
+  width: 100%;
+  height: 100%;
+  }
+  
+  &__img {
+    display: block;
     width: 100%;
-    height: 23rem;
-    overflow: hidden;
-    @include m.tablet {
-        height: 33rem;
-    }
-    @include m.desktop-small {
-        height: 40.8rem;
-    }
-    @include m.desktop-ultra-hd {
-        height: 50.8rem;
-    }
-    &__img{
-        display: block;
-        width: 100%;
-        object-fit: cover;
-    }
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  &__skeleton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }

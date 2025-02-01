@@ -24,11 +24,11 @@ export const App = () => {
           <Route index element={<HomePage />} />
           <Route path="nosotros" element={<Nosotros />} />
           <Route path="servicios" element={<Services />} />
-          <Route path="servicios/:serviceId" element={<ServicesLayout />} />
-          <Route
+          <Route path="/servicios/:slug" element={<ServicesLayout />} />
+          {/* <Route
             path="servicios/:serviceId/:courseSlug"
-            element={<Temarios />} // Aquí se mostrará el contenido del curso
-          />
+            element={<Temarios />} /
+          /> */}
           <Route path="Contact" element={<Contact />} />
           <Route path="Trabaja-con-Nosotros" element={<WorkNosotros />} />
         </Route>

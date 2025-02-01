@@ -2,27 +2,23 @@ import { createRoot } from "react-dom/client";
 import "./styles/main.scss";
 import { App } from "./App";
 import useCategoryStore from "./store/categoryStore";
-import { registerServiceWorker } from "/public/workers/swRegister.js";
+import { registerServiceWorker } from "/public/sw.js";
 
-// 📌 Registrar el Service Worker
+// // 📌 Registrar el Service Worker
 registerServiceWorker();
 
-// 📌 Obtener datos antes de renderizar la app
+// 📌 Función para cargar y sincronizar los datos
 const fetchData = async () => {
-  console.log("🔄 Verificando datos en caché...");
+  console.log("🔄 Sincronizando datos...");
 
-  const store = useCategoryStore.getState(); // ✅ Asegurar que obtenemos el store
+  // Siempre se llama a fetchCategories para que realice la carga inicial
+  // y la sincronización en segundo plano con la API.
+  await useCategoryStore.getState().fetchCategories();
 
-  if (store.categories && store.categories.length > 0) {
-    console.log("✅ Datos ya en Zustand, evitando carga innecesaria.");
-    return;
-  }
-
-  await useCategoryStore.getState().fetchCategories(); // ✅ Llamar correctamente a `fetchCategories()`
   console.log("✅ Datos listos:", useCategoryStore.getState().categories);
 };
 
-// 📌 Esperar que los datos se carguen antes de renderizar
+// 📌 Esperar a que los datos se carguen antes de renderizar
 fetchData().then(() => {
   console.log("🚀 Renderizando la aplicación...");
   createRoot(document.getElementById("root")).render(<App />);

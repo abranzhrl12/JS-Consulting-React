@@ -1,15 +1,15 @@
 import { create } from "zustand";
 import axios from "axios";
-import { saveToDB, getFromDB, EXPIRATION_TIME } from "../utils/indexedDB";
+import { saveToDB, getFromDB } from "../utils/indexedDB"; // Se elimina EXPIRATION_TIME
 
-const API_URL = "https://api.jsconsulting.pe/category";
-const AUTH_TOKEN = import.meta.env.VITE_API_AUTH_TOKEN;
+const API_URL = "https://api.jsconsulting.pe/category/get";
+// const AUTH_TOKEN = import.meta.env.VITE_API_AUTH_TOKEN;
 
 // Crear instancia de Axios optimizada
 const api = axios.create({
   baseURL: API_URL,
   headers: {
-    Authorization: AUTH_TOKEN,
+    // Authorization: AUTH_TOKEN,
     Connection: "keep-alive",
   },
   timeout: 5000, // Límite de espera de 5s
@@ -25,45 +25,48 @@ const createCategoryStore = () =>
 
     fetchCategories: async () => {
       set({ isLoading: true });
-
       try {
         console.log("🔄 Verificando datos en IndexedDB...");
         const dbData = await getFromDB();
 
-        // ✅ Si hay datos en IndexedDB y no han expirado, usarlos
-        if (
-          dbData &&
-          dbData.data &&
-          dbData.data.length > 0 &&
-          Date.now() - dbData.lastUpdated < EXPIRATION_TIME
-        ) {
+        // Si hay datos en IndexedDB, se establecen de inmediato
+        if (dbData && dbData.data && dbData.data.length > 0) {
           console.log("⚡ Usando datos cacheados de IndexedDB:", dbData.data);
-          set({ categories: dbData.data, isLoading: false });
-          return;
+          set({ categories: dbData.data });
         }
 
-        console.log("⏳ Caché expirado o inexistente, llamando a la API...");
-
+        console.log("⏳ Llamando a la API para sincronizar datos...");
         console.time("⏳ Tiempo de respuesta API");
         const response = await api.get("/");
         console.timeEnd("⏳ Tiempo de respuesta API");
 
         if (!response.data || response.data.length === 0) {
           console.warn(
-            "⚠️ La API devolvió datos vacíos. No se guardarán en IndexedDB."
+            "⚠️ La API devolvió datos vacíos. No se actualizan los datos."
           );
-          set({ categories: [], isLoading: false });
+          set({ isLoading: false });
           return;
         }
 
-        set({ categories: response.data, isLoading: false });
+        const apiData = response.data;
 
-        // 📌 Guardar datos en IndexedDB para futuras consultas
-        await saveToDB(response.data);
-        console.log(
-          "✅ Datos actualizados en IndexedDB y Zustand:",
-          response.data
-        );
+        // Compara la data de la API con la almacenada en IndexedDB
+        if (
+          !dbData ||
+          JSON.stringify(dbData.data) !== JSON.stringify(apiData)
+        ) {
+          console.log(
+            "✅ Datos diferentes. Actualizando IndexedDB y estado..."
+          );
+          set({ categories: apiData });
+          await saveToDB(apiData);
+        } else {
+          console.log(
+            "✅ La data de la API es idéntica a la almacenada. No se actualiza."
+          );
+        }
+
+        set({ isLoading: false });
       } catch (error) {
         console.error(
           "❌ Error obteniendo categorías:",
@@ -75,7 +78,7 @@ const createCategoryStore = () =>
 
     clearCache: async () => {
       set({ categories: [] });
-      await saveToDB([]); // Limpiar IndexedDB
+      await saveToDB([]); // Guardamos un array vacío para limpiar la DB
       console.log("🗑️ Caché de IndexedDB limpiado");
     },
   }));
@@ -88,4 +91,4 @@ const getCategoryStoreInstance = () => {
   return instance;
 };
 
-export default getCategoryStoreInstance;
+export default getCategoryStoreInstance();
