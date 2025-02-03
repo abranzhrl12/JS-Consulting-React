@@ -1,12 +1,24 @@
 import { ItemTemariodetail } from "../../components/ItemTemariodetail/ItemTemariodetail";
 import "./container-temariodetail.scss";
-export const ContainerTemarioDetail = () => {
+
+export const ContainerTemarioDetail = ({ detalles }) => {
   return (
     <section className="container-temariodetail">
-      {/* Usamos el ID de un curso existente */}
-      <ItemTemariodetail courseId={1} />
-      {/* Puedes cambiar el ID para cargar el otro curso */}
-      <ItemTemariodetail courseId={2} />
+      {detalles.map((detalle, index) => (
+        <div key={index} className="container-temariodetail__content">
+          <h3 className="container-temariodetail__title">
+            <ol className="container-temariodetail__title-ol">
+              <li className="container-temariodetail__title-li">
+                {detalle.tTitulo} - {detalle.tInicio}
+              </li>
+            </ol>
+          </h3>
+
+          <div className="container-temariodetail__element">
+            <ItemTemariodetail detalle={detalle} />
+          </div>
+        </div>
+      ))}
     </section>
   );
 };

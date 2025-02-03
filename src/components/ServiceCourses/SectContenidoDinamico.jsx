@@ -166,10 +166,14 @@ export const SectContenidoDinamico = () => {
               // o dejarlo vacío mientras se carga
               <div>Cargando contenido...</div>
             ) : (
-              // Renderizamos el HTML almacenado en tHtml cuando ya se tiene la data
-              <div
-                dangerouslySetInnerHTML={{ __html: serviceDetail.tHtml }}
-              ></div>
+              <>
+                <h1 className="contenido__title">{serviceDetail.tNombre}</h1>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: serviceDetail.tHtml.replaceAll("&nbsp;", " "),
+                  }}
+                ></div>
+              </>
             )}
           </div>
 

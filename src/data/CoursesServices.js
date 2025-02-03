@@ -1,7 +1,7 @@
 export const coursesData = [
   {
     serviceId: "control-riesgos",
-    itemsPerPage: 6, // Elementos por página
+
     totalItems: 13, // Total de cursos
     courses: [
       {

@@ -191,7 +191,8 @@ export const Navbar = () => {
     if (
       location.pathname === "/" ||
       location.pathname === "/nosotros" ||
-      location.pathname === "/servicios"
+      location.pathname === "/servicios" ||
+      location.pathname === "/prueba"
     ) {
       setIsTransparent(true);
     } else {
@@ -210,47 +211,56 @@ export const Navbar = () => {
         isScrolled || !isTransparent ? "scrolled" : "transparent"
       }`}
     >
-      {/* logo */}
-      <a href="/" className="navbar__logo" title="Inicio - Js consulting">
-        <img src="/assets/home/Svg_Logo_Fast.svg" alt="Logo de JS Consulting" />
-      </a>
-      {/* Lista Navegación */}
-      <ul className={`navbar__list ${isMenuOpen ? "active" : ""}`}>
-        {navItems.map((item, index) => (
-          <li key={index} className="navbar__item">
-            {item.isExternal ? (
-              <a
-                href={item.href}
-                title={item.title}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="navbar__link"
-              >
-                {item.icon && (
-                  <img
-                    src={item.icon}
-                    alt={`Icono de ${item.label}`}
-                    className="navbar__icon"
-                  />
-                )}
-                {item.label}
-              </a>
-            ) : (
-              <Link to={item.href} title={item.title} className="navbar__link">
-                {item.icon && (
-                  <img
-                    src={item.icon}
-                    alt={`Icono de ${item.label}`}
-                    className="navbar__icon"
-                  />
-                )}
-                {item.label}
-              </Link>
-            )}
-          </li>
-        ))}
-      </ul>
-      <Hamburger isOpen={isMenuOpen} onClick={toggleMenu} />
+      <div className="navbar__contentall">
+        {/* logo */}
+        <a href="/" className="navbar__logo" title="Inicio - Js consulting">
+          <img
+            src="/assets/home/Svg_Logo_Fast.svg"
+            alt="Logo de JS Consulting"
+          />
+        </a>
+        {/* Lista Navegación */}
+        <ul className={`navbar__list ${isMenuOpen ? "active" : ""}`}>
+          {navItems.map((item, index) => (
+            <li key={index} className="navbar__item">
+              {item.isExternal ? (
+                <a
+                  href={item.href}
+                  title={item.title}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="navbar__link"
+                >
+                  {item.icon && (
+                    <img
+                      src={item.icon}
+                      alt={`Icono de ${item.label}`}
+                      className="navbar__icon"
+                    />
+                  )}
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  to={item.href}
+                  title={item.title}
+                  className="navbar__link"
+                >
+                  {item.icon && (
+                    <img
+                      src={item.icon}
+                      alt={`Icono de ${item.label}`}
+                      className="navbar__icon"
+                    />
+                  )}
+                  {item.label}
+                </Link>
+              )}
+            </li>
+          ))}
+        </ul>
+        <Hamburger isOpen={isMenuOpen} onClick={toggleMenu} />
+      </div>
     </nav>
   );
 };

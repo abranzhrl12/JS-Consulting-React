@@ -1,8 +1,36 @@
 
 .container-temariodetail{
-    display: flex;
-    flex-direction: column;
-    // justify-content: center;
-    align-items: center;
-    gap: 2rem;
+
+    &__content{
+
+  
+        color: white;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 3rem 0;
+    }
+    &__title{
+        width: 90%;
+        margin: 0 auto;
+        background: #EAEEF2;
+        color: #13124A;
+        border-radius: 1rem;
+        min-height: 4.8rem;
+   
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding-left: 4rem;
+     
+    }
+    &__title-li{
+        list-style: disc;
+    }
+    &__element{
+        width: 100%;
+        background: #FF3E33;
+    }
 }

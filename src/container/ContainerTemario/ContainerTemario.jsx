@@ -1,46 +1,50 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { datatemarioCursos } from "../../data/datatemario.js";
 import "./containerTemario.scss";
-export const ContainerTemario = () => {
-  const { serviceId, courseSlug } = useParams();
-  const [temario, setTemario] = useState(null);
 
-  useEffect(() => {
-    console.log("serviceId:", serviceId);
-    console.log("courseSlug:", courseSlug);
-
-    // Buscar el servicio por serviceId
-    const service = datatemarioCursos.find(
-      (service) => service.serviceId === serviceId
-    );
-
-    if (!service) {
-      console.log("Servicio no encontrado");
-      return; // Si el servicio no se encuentra, salimos de la función
-    }
-
-    if (service.slug !== courseSlug) {
-      console.log("Curso no encontrado en este servicio");
-      return;
-    }
-
-    // Si todo está bien, obtenemos el temario
-    setTemario(service.contenidoHtml);
-  }, [serviceId, courseSlug]);
-
-  if (!temario) {
+export const ContainerTemario = ({ contenidoHtml, tNombre }) => {
+  if (!contenidoHtml) {
     return <h2>Cargando...</h2>;
   }
-
+  const capitalizeText = (text) => {
+    if (!text) return ""; // Evita errores si `text` es undefined o null
+    return text
+      .toLowerCase()
+      .split(" ") // Divide el texto en palabras
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitaliza cada palabra
+      .join(" "); // Une las palabras nuevamente
+  };
   return (
     <section className="Temarios">
       <div className="Temarios__contentall">
         <div className="Temarios__strcuct">
           <div
             className="Temario"
-            dangerouslySetInnerHTML={{ __html: temario }}
+            dangerouslySetInnerHTML={{ __html: contenidoHtml }}
           />
+        </div>
+        <div className="Temarios__images">
+          <div>
+            <img src="/assets/cursotemario/certificate.webp" alt="" />
+          </div>
+          <div>
+            <h4 className="Temarios__imagesTitle">Certifícate como:</h4>
+            <p>
+              {`  Certificado por haber aprobado el curso de ${capitalizeText(
+                tNombre
+              )} por JS Consulting`}
+            </p>
+          </div>
+        </div>
+        <div className="Temarios__location">
+          <h4>LUGAR:</h4>
+          <p>
+            CETAR JS: Los Sauces de Cajamarquilla Mz Lote 13 - Lurigancho
+            Chosica
+          </p>
+          <p>
+            El curso también se puede realizar en sus instalaciones, el temario
+            y la práctica se adecuará de acuerdo a las condiciones de sus
+            instalaciones.
+          </p>
         </div>
       </div>
     </section>

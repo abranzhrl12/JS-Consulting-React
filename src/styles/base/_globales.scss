@@ -42,8 +42,9 @@ html {
     width: 90%;
     max-width: 120rem;
     margin: 0 auto;
+
     @include m.desktop-ultra-hd {
-      max-width: 140rem;
+      max-width: 150rem;
     }
   }
   body {

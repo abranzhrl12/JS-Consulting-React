@@ -1,32 +1,38 @@
-// import { useParams } from "react-router-dom";
+// import React, { useEffect } from "react";
+// import { Link, useParams } from "react-router-dom";
 // import { usePaginatedFetch } from "../../hooks/usePaginatedFetch";
-// import { coursesData } from "../../data/CoursesServices";
+// import { useCourseStore } from "../../store/useCourseStore";
 
 // export const SectionCursosServices = () => {
-//   const { serviceId } = useParams();
+//   // Extraemos el slug de la URL
+//   const { slug } = useParams();
+//   // En caso de que slug incluya accidentalmente la query (lo normal es que no lo haga)
+//   const pureSlug = slug.split("?")[0];
 
-//   const service = coursesData.find(
-//     (service) => service.serviceId === serviceId
-//   );
+//   // Obtenemos el estado y la función del store
+//   const { courses, loading, error, fetchCoursesBySlug } = useCourseStore();
 
-//   // Valores predeterminados si el servicio no existe
-//   const itemsPerPage = service ? service.itemsPerPage : 1; // Elementos por página
-//   const allCourses = service ? service.courses : []; // Cursos del servicio o vacío
+//   // Disparamos la petición al montar o cuando pureSlug cambie
+//   useEffect(() => {
+//     if (pureSlug) {
+//       fetchCoursesBySlug(pureSlug);
+//     }
+//   }, [pureSlug, fetchCoursesBySlug]);
 
-//   // Llamar al hook de paginación siempre, sin condiciones
+//   // Configuración de paginación (puedes ajustar itemsPerPage según tu necesidad)
+//   const itemsPerPage = 1;
 //   const { paginatedData, currentPage, totalPages, changePage } =
-//     usePaginatedFetch(
-//       allCourses, // Siempre pasar cursos (vacío si no hay servicio)
-//       itemsPerPage // Elementos por página
-//     );
+//     usePaginatedFetch(courses, itemsPerPage);
 
-//   // Validar si el servicio no existe
-//   if (!service) {
-//     return <h2>Error: No se encontró el servicio solicitado.</h2>;
+//   if (loading) {
+//     return <h2>Cargando cursos...</h2>;
 //   }
 
-//   // Verificar si hay cursos paginados
-//   if (!paginatedData || paginatedData.length === 0) {
+//   if (error) {
+//     return <h2>Error: {error}</h2>;
+//   }
+
+//   if (!courses || courses.length === 0) {
 //     return <h2>No hay cursos disponibles para este servicio.</h2>;
 //   }
 
@@ -36,26 +42,37 @@
 //         <h2 className="Section-Cursos__title">Cursos relacionados</h2>
 //         <div className="Section-Cursos__grid">
 //           {paginatedData.map((course) => (
-//             <div key={course.id} className="Section-Cursos__card">
-//               <img
-//                 className="Section-Cursos__card-img"
-//                 src={course.image}
-//                 alt={course.alt}
-//                 loading="lazy"
-//               />
-//               <p className="Section-Cursos__card-paragraph">{course.title}</p>
+//             <div
+//               key={course.iIdCurso} // Usamos el identificador de la API
+//               className="Section-Cursos__card"
+//               style={{ display: "block" }}
+//             >
+//               <Link
+//                 to={`/curso/${course.tUrlSlug}`} // Usamos pureSlug aquí
+//                 className="Section-Cursos__card-link"
+//               >
+//                 <img
+//                   className="Section-Cursos__card-img"
+//                   src={course.tImagenUrl} // URL de la imagen del curso
+//                   alt={course.tNombre}
+//                   loading="lazy"
+//                 />
+//                 <p className="Section-Cursos__card-paragraph">
+//                   {course.tNombre} {/* Nombre del curso */}
+//                 </p>
+//               </Link>
 //             </div>
 //           ))}
 //         </div>
 
-//         {/* Paginación Numérica */}
+//         {/* Paginación */}
 //         <div className="Section-Cursos__pagination">
 //           {[...Array(totalPages)].map((_, index) => (
 //             <button
 //               key={index}
-//               onClick={() => changePage(index + 1)} // Cambiar página al hacer clic
+//               onClick={() => changePage(index + 1)}
 //               className={`Section-Cursos__pagination-btn ${
-//                 currentPage === index + 1 ? "active" : "" // Agregar clase "active" si es la página actual
+//                 currentPage === index + 1 ? "active" : ""
 //               }`}
 //             >
 //               {index + 1}
@@ -66,29 +83,49 @@
 //     </section>
 //   );
 // };
-import { Link } from "react-router-dom"; // Importamos el Link
-import { useParams } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import { usePaginatedFetch } from "../../hooks/usePaginatedFetch";
-import { coursesData } from "../../data/CoursesServices";
+import { useCourseStore } from "../../store/useCourseStore";
 
 export const SectionCursosServices = () => {
-  const { serviceId } = useParams();
+  const { slug } = useParams();
+  const pureSlug = slug.split("?")[0];
+  const { courses, loading, error, fetchCoursesBySlug } = useCourseStore();
 
-  const service = coursesData.find(
-    (service) => service.serviceId === serviceId
-  );
+  useEffect(() => {
+    if (pureSlug) {
+      fetchCoursesBySlug(pureSlug);
+    }
+  }, [pureSlug, fetchCoursesBySlug]);
 
-  const itemsPerPage = service ? service.itemsPerPage : 1;
-  const allCourses = service ? service.courses : [];
-
+  const itemsPerPage = 1;
   const { paginatedData, currentPage, totalPages, changePage } =
-    usePaginatedFetch(allCourses, itemsPerPage);
+    usePaginatedFetch(courses, itemsPerPage);
 
-  if (!service) {
-    return <h2>Error: No se encontró el servicio solicitado.</h2>;
+  if (loading) {
+    return (
+      <section className="Section-Cursos">
+        <div className="Section-Cursos__contentall">
+          <h2 className="Section-Cursos__title">Cursos relacionados</h2>
+          <div className="Section-Cursos__grid">
+            {[...Array(3)].map((_, index) => (
+              <div key={index} className="SkeletonCard">
+                <div className="SkeletonCard__image" />
+                <div className="SkeletonCard__text" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
   }
 
-  if (!paginatedData || paginatedData.length === 0) {
+  if (error) {
+    return <h2>Error: {error}</h2>;
+  }
+
+  if (!courses || courses.length === 0) {
     return <h2>No hay cursos disponibles para este servicio.</h2>;
   }
 
@@ -99,27 +136,28 @@ export const SectionCursosServices = () => {
         <div className="Section-Cursos__grid">
           {paginatedData.map((course) => (
             <div
-              key={course.id}
+              key={course.iIdCurso}
               className="Section-Cursos__card"
               style={{ display: "block" }}
             >
               <Link
-                to={`/servicios/${serviceId}/${course.slug}`} // Enlace dinámico con el slug
+                to={`/curso/${course.tUrlSlug}`}
                 className="Section-Cursos__card-link"
               >
                 <img
                   className="Section-Cursos__card-img"
-                  src={course.image}
-                  alt={course.alt}
+                  src={course.tImagenUrl}
+                  alt={course.tNombre}
                   loading="lazy"
                 />
-                <p className="Section-Cursos__card-paragraph">{course.title}</p>
+                <p className="Section-Cursos__card-paragraph">
+                  {course.tNombre}
+                </p>
               </Link>
             </div>
           ))}
         </div>
 
-        {/* Paginación */}
         <div className="Section-Cursos__pagination">
           {[...Array(totalPages)].map((_, index) => (
             <button

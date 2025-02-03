@@ -5,7 +5,7 @@ export const ServicesLayout = () => {
   return (
     <>
       <SectContenidoDinamico />
-      {/* <SectionCursosServices /> */}
+      <SectionCursosServices />
     </>
   );
 };

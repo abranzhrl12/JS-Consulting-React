@@ -16,7 +16,17 @@
  background: var(--background-primary);
 
   transition: background-color 0.3s ease;
-
+&__contentall{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 130rem;
+  
+  @include m.desktop-ultra-hd {
+      max-width: 150rem;
+  }
+}
   &__logo {
     z-index: 100;
     cursor: pointer;

@@ -25,10 +25,7 @@ export const App = () => {
           <Route path="nosotros" element={<Nosotros />} />
           <Route path="servicios" element={<Services />} />
           <Route path="/servicios/:slug" element={<ServicesLayout />} />
-          {/* <Route
-            path="servicios/:serviceId/:courseSlug"
-            element={<Temarios />} /
-          /> */}
+          {/* <Route path="prueba" element={<Temarios />} /> */}
           <Route path="Contact" element={<Contact />} />
           <Route path="Trabaja-con-Nosotros" element={<WorkNosotros />} />
         </Route>
@@ -38,6 +35,14 @@ export const App = () => {
           element={
             <SimpleLayout>
               <Reclamos />
+            </SimpleLayout>
+          }
+        />
+        <Route
+          path="curso/:slug"
+          element={
+            <SimpleLayout>
+              <Temarios />
             </SimpleLayout>
           }
         />

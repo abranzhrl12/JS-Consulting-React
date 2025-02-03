@@ -1,4 +1,4 @@
-@use '../../styles/utils/mixins.scss' as m;
+@use '../../styles/utils/mixins.scss' as *;
 .contenido{
     background: #F8F8F8;
     color: #13124A;
@@ -7,11 +7,37 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        @include m.desktop-small {
+        @include desktop-small {
           
             display: grid;
             grid-template-columns: repeat(2,1fr);
             gap: 2rem;
+        }
+    }
+    &__title{
+        color: var(--color-title-secondary);
+        font-size: 2.3rem;
+        line-height: 1.2;
+        padding-bottom: 1rem;
+        
+        @include tablet {
+            font-size: 2.8rem;
+        }
+        
+        @include desktop-small {
+          font-size: 3.2rem;   
+        }
+    
+    }
+    h2{
+        font-size: 1.6rem;
+        
+        @include tablet {
+            font-size: 1.8rem;
+        }
+        
+        @include desktop-small {
+            font-size: 2rem;
         }
     }
     &__form{
@@ -19,7 +45,7 @@
         background: #FCFCFC;
         outline: 1px solid #E0E0E0;
         border-radius: 1rem;
-        @include m.desktop-small {
+        @include desktop-small {
             margin: 0 auto;
             max-width: 55rem;
             max-height: fit-content;
@@ -79,5 +105,10 @@
         list-style-type: inherit; /* Hereda el estilo del ul */
        }
     }
-   
+   ol{
+    list-style: square;
+   }
+   li{
+    list-style-type: disc;
+   }
 }
