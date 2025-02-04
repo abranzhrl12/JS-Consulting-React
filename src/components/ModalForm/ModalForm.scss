@@ -9,7 +9,7 @@
     padding: 10px 12px;
     border-radius: 14px;
     transition: transform 0.4s;
-    
+  
     &.success {
       animation: showModal 2.5s forwards, hiddemModal 3.8s 3.5s forwards;
       background: #30934e;
@@ -29,7 +29,7 @@
     .modal-content {
       display: flex;
       flex-direction: row-reverse;
-      
+      color: white;
       .modal-close-container {
         .modal-close {
           cursor: pointer;
@@ -47,7 +47,7 @@
       align-items: center;
       gap: 10px;
       flex-grow: 1;
-  
+      color: white;
       @media (min-width: 768px) {
         gap: 20px;
       }
@@ -77,7 +77,7 @@
           font-size: 13px;
           margin: 0;
           line-height: 1.4;
-          
+          color: white;
           @media (min-width: 768px) {
             font-size: 16px;
           }
