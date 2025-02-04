@@ -13,21 +13,34 @@ export const Temarios = () => {
     fetchCourseBySlug(slug); // Cargar los datos del curso al montar el componente
   }, [slug, fetchCourseBySlug]);
 
-  if (loading) return <h2>Cargando...</h2>;
-  if (error) return <h2>{error}</h2>;
-  if (!course) return <h2>Curso no encontrado</h2>;
-
   return (
     <>
-      {/* Pasamos los datos del curso como props */}
+      {/* ✅ El HeaderTemario SIEMPRE se renderiza */}
       <HeaderTemario
-        title={course.tNombre}
-        banner={course.tBannerUrl}
-        tDescripcion={course.tDescripcion}
+        title={course?.tNombre || "Cargando..."}
+        banner={course?.tBannerUrl || "/default-banner.jpg"}
+        tDescripcion={course?.tDescripcion || "Cargando descripción..."}
+        loading={loading} // Activa el skeleton
       />
-      <ContainerTemarioDetail detalles={course.detalles} />
 
-      <ContainerTemario contenidoHtml={course.tHtml} tNombre={course.tNombre} />
+      {/* ⚠️ Mostrar error si existe */}
+      {error && <h2>{error}</h2>}
+
+      {/* ⚠️ Mostrar mensaje si el curso no existe y no está cargando */}
+      {!loading && !course && <h2>Curso no encontrado</h2>}
+
+      {/* ✅ Mostrar contenido SOLO cuando haya datos */}
+      {!loading && course ? (
+        <>
+          <ContainerTemarioDetail detalles={course.detalles} />
+          <ContainerTemario
+            contenidoHtml={course.tHtml}
+            tNombre={course.tNombre}
+          />
+        </>
+      ) : (
+        <h2></h2> // Placeholder mientras carga
+      )}
     </>
   );
 };
