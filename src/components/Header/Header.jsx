@@ -22,7 +22,7 @@ export const Header = ({
   const shouldRenderButton = ["/", "/nosotros"].includes(location.pathname);
 
   return (
-    <header className={`header ${className}`}>
+    <header className={`header ${className}`} id="header">
       {/* Renderiza el video si existe videoUrl */}
       {videoUrl ? (
         <video

@@ -396,7 +396,10 @@ export const BolsaTrabajoForm = () => {
         </div>
       </div>
 
-      <SubmitButton disabled={loading}>
+      <SubmitButton
+        className="bolsa-trabajo-form__btnsubmit"
+        disabled={loading}
+      >
         {loading ? "Enviando..." : "Enviar"}
       </SubmitButton>
 

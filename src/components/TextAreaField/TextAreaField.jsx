@@ -4,12 +4,13 @@ import "./TextAreaField.scss.scss"; // Archivo de estilos (opcional)
 export const TextAreaField = ({
   label,
   name,
-  placeholder,
+  placeholder = "Mensaje/Requerimiento ",
   value,
   onChange,
   validate,
   errorMessage,
   showLabel = true, // Por defecto muestra el label
+  minHeight, // Prop opcional para establecer la altura mínima
 }) => {
   const [error, setError] = useState(null);
 
@@ -31,6 +32,7 @@ export const TextAreaField = ({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         onBlur={handleBlur}
+        style={minHeight ? { minHeight } : {}}
         className={`text-area-field__input ${
           error ? "text-area-field__input--error" : ""
         }`}

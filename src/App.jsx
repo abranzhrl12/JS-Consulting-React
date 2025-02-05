@@ -18,7 +18,7 @@ export const App = () => {
         <Route
           path="/"
           element={
-            <MainLayout videoUrl="https://res.cloudinary.com/dyg9ifqo2/video/upload/v1736279781/oanttjiavhz3ijlqh4k0.mp4" />
+            <MainLayout videoUrl="https://jsconsulting.pe/videos/videoBanner.mp4" />
           }
         >
           <Route index element={<HomePage />} />

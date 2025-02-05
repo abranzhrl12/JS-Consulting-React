@@ -9,14 +9,15 @@
     padding: 10px 12px;
     border-radius: 14px;
     transition: transform 0.4s;
+    z-index: 999;
   
     &.success {
-      animation: showModal 2.5s forwards, hiddemModal 3.8s 3.5s forwards;
+      animation: showModal 3.5s forwards, hiddemModal 3.8s 4s forwards;
       background: #30934e;
     }
     
     &.error {
-      animation: showModal 2s forwards, hiddemModal 3s 2s forwards;
+      animation: showModal 3s forwards, hiddemModal 4s 4.5s forwards;
       background: #ff3e33;
     }
   

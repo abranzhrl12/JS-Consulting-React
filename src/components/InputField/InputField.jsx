@@ -10,6 +10,7 @@ export const InputField = ({
   onChange,
   validate, // Función de validación externa
   errorMessage,
+  maxLength, // Nuevo atributo opcional
 }) => {
   const [error, setError] = useState(null);
 
@@ -33,6 +34,7 @@ export const InputField = ({
         className={`input-field__input ${
           error ? "input-field__input--error" : ""
         }`}
+        maxLength={maxLength} // Aplica maxLength si se proporciona
       />
       {error && <span className="input-field__error">{error}</span>}
     </div>

@@ -11,7 +11,7 @@ export const BrochureCarousel = () => {
       <div className="Brouchure__Carrousel swiper-container">
         <Swiper
           modules={[Navigation, Pagination]}
-          spaceBetween={15}
+          spaceBetween={20}
           slidesPerView="auto"
           //   slidesPerView={1}
           //   navigation

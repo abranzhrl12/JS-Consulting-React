@@ -20,8 +20,8 @@ export const SectInformation = () => {
           <div className="information__items">
             <figure className="information__figure">
               <img
-                src="/assets/Nosotros/IconBook.svg"
-                alt="Icono de pulgar hacia arriba representando clientes satisfechos"
+                src="/assets/Nosotros/IconLIKE.svg"
+                alt="Icono de personas representando nuevos clientes"
                 className="information__icon"
               />
               <figcaption className="information__caption">
@@ -34,7 +34,7 @@ export const SectInformation = () => {
           <div className="information__items">
             <figure className="information__figure">
               <img
-                src="/assets/Nosotros/IconLIKE.svg"
+                src="/assets/Nosotros/Iconclientes.svg"
                 alt="Icono de personas representando nuevos clientes"
                 className="information__icon"
               />

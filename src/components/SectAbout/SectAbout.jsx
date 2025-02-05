@@ -134,7 +134,13 @@ export const SectAbout = () => {
             <div className="about-us-section__content-videos">
               {!isVideoClicked1 && (
                 <div className="video-overlay">
-                  <p className="video-text">Ver video corporativo</p>
+                  <p className="video-text">
+                    <img
+                      src="/assets/Nosotros/iconplayvideo.svg"
+                      alt="play icono video"
+                    />
+                    Ver video corporativo
+                  </p>
                 </div>
               )}
               <video
@@ -142,6 +148,7 @@ export const SectAbout = () => {
                 className="about-us-section__videos"
                 id="video-Nosotros1"
                 src="https://jsconsulting.pe/videos/principal.mp4"
+                poster="/assets/Nosotros/portada_video_1.svg"
                 controls={showControls} // Los controles solo se mostrarán después de 2 segundos
                 playsInline
                 onClick={() => handleVideoClick(videoRef1, setIsVideoClicked1)} // Detecta el clic para ocultar el texto
@@ -171,15 +178,22 @@ export const SectAbout = () => {
             <div className="about-us-section__content-videos">
               {!isVideoClicked2 && (
                 <div className="video-overlay">
-                  <p className="video-text">Ver video corporativo</p>
+                  <p className="video-text">
+                    <img
+                      src="/assets/Nosotros/iconplayvideo.svg"
+                      alt="play icono video"
+                    />
+                    Ver video
+                  </p>
                 </div>
               )}
               <video
                 ref={videoRef2} // Usar el segundo ref
                 className="about-us-section__videos"
                 id="video-Nosotros2"
-                src="https://res.cloudinary.com/dyg9ifqo2/video/upload/v1736349235/kwee3cogia328gbqznhe.mp4"
+                src="https://jsconsulting.pe/videos/barcelona.mp4"
                 controls={showControls} // Los controles solo se mostrarán después de 2 segundos
+                poster="/assets/Nosotros/portada_video_2.svg"
                 playsInline
                 onClick={() => handleVideoClick(videoRef2, setIsVideoClicked2)} // Detecta el clic para ocultar el texto
               >

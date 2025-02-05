@@ -5,6 +5,7 @@
     &__texts{
         background: #13124A;
         color: white;
+        text-transform: uppercase;
         text-align: center;
         padding-top: 1.5rem;
         h2{
@@ -32,14 +33,19 @@
             height: 2rem;
             margin: 0 auto;
             background: red;
+            
         }
       
     }
     &__container{
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap:2rem;
         padding: 4rem 0;
+        
+        @include m.tablet {
+            gap: 0.5rem;
+        }
         // transition: all .6s;
         @include m.tablet {
             width: 80%;
@@ -50,6 +56,16 @@
             grid-template-columns: repeat(2,1fr);
             grid-template-rows: auto; // Ajusta las filas según el contenido
         }
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        
+        @include m.tablet {
+            gap: 0.5rem;
+        }
+     
     }
     &__item{
      
@@ -106,7 +122,7 @@
         opacity 0.3s ease, 
         visibility 0.3s ease, 
         padding 0.2s ease;
-    
+        color: #13124A;
     }
 
    

@@ -1,5 +1,5 @@
 // import { Carousel } from "./Carousel";
-import { cursos } from "../../data/dataCursosSlider.js";
+
 import { Carousel } from "./Carousel.jsx";
 export const CursoCarousel = () => {
   return (
@@ -9,7 +9,7 @@ export const CursoCarousel = () => {
           Cursos Disponibles en Noviembre
         </h2>
       </div>
-      <Carousel cursos={cursos} />
+      <Carousel/>
     </section>
   );
 };

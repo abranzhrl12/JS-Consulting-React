@@ -41,7 +41,7 @@ export const MainLayout = ({ videoUrl, title, description, children }) => {
         };
       case "/Trabaja-con-Nosotros":
         return {
-          title: "Trabaja con nosotros",
+          title: "Trabaja",
           description: "",
         };
 

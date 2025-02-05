@@ -11,6 +11,18 @@ export const Temarios = () => {
 
   useEffect(() => {
     fetchCourseBySlug(slug); // Cargar los datos del curso al montar el componente
+
+    // Esperar un poco para asegurar que el DOM ya renderizó el header
+    setTimeout(() => {
+      const headerElement = document.getElementById("headerTemario");
+      if (headerElement) {
+        headerElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 500);
+  }, [slug, fetchCourseBySlug]);
+
+  useEffect(() => {
+    fetchCourseBySlug(slug); // Cargar los datos del curso al montar el componente
   }, [slug, fetchCourseBySlug]);
 
   return (

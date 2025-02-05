@@ -5,7 +5,7 @@ import { SubmitButton } from "../SubmitButton/SubmitButton";
 import { ModalForm } from "../ModalForm/ModalForm";
 import "./contactform.scss";
 
-export const ContactForm = () => {
+export const ContactForm = ({ background = "#FCFCFC" }) => {
   const [formData, setFormData] = useState({
     tNombreCompleto: "",
     tEmail: "",
@@ -76,7 +76,11 @@ export const ContactForm = () => {
   };
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit}>
+    <form
+      className="contact-form"
+      onSubmit={handleSubmit}
+      style={{ backgroundColor: background }}
+    >
       <h3>Contáctanos</h3>
       <p>Déjenos sus datos y nos pondremos en contacto</p>
 
@@ -111,14 +115,14 @@ export const ContactForm = () => {
         <div className="contact-form__textarea">
           <TextAreaField
             name="mensaje"
-            placeholder="Escribe tu mensaje aquí"
+            placeholder="Mensaje/Requerimiento "
             value={formData.tMensaje}
             onChange={(value) => handleInputChange("tMensaje", value)}
             showLabel={true}
           />
         </div>
 
-        <SubmitButton disabled={loading}>
+        <SubmitButton disabled={loading} className="contact-form__subtmit">
           {loading ? "Enviando..." : "Enviar"}
         </SubmitButton>
 

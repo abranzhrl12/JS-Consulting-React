@@ -52,16 +52,31 @@
         margin-top: 6rem;
         border-radius: .8rem;
         letter-spacing: 1px;
-   
+        transition: background .3s,transform .1s;
         @include m.tablet {
          margin: 0;
+        }
+        &:hover{
+            background: #FF3E33;
+            transform: scale(1.02);
         }
         
     }
     p{
+        color: #13124A;
         display: block;
         text-align: center;
-        font-size: 1.7rem;
+  
+        font-weight: 500;
+        font-size: 1.3rem;
+        
+        @include m.tablet {
+            font-size: 1.6rem;
+        }
+        
+        @include m.desktop-small {
+            font-size: 1.8rem;
+        }
     }
    
 }

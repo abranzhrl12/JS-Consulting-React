@@ -6,7 +6,7 @@ export const brochures = [
     description: "Descarga nuestro Brochure General aquí",
     image: "/assets/home/Brochure1.webp", // Solo una imagen
     alt: "Portada del Brochure General",
-    pdf: "/pdf/brochure-general.pdf",
+    pdf: "https://jsconsulting.pe/assets/Brochure_General.pdf",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const brochures = [
     description: "Descarga nuestro Brochure de SSOMA aquí",
     image: "/assets/home/Brochure2.webp",
     alt: "Portada del Brochure SSOMA",
-    pdf: "/pdf/brochure-ssoma.pdf",
+    pdf: "https://jsconsulting.pe/assets/Brochure_de_Capacitaciones_de_Seguridad_JS_Consulting.pdf",
   },
   {
     id: 3,
@@ -24,6 +24,6 @@ export const brochures = [
     description: "Descarga nuestro Brochure de SSOMA aquí",
     image: "/assets/home/Brochure3.webp",
     alt: "Portada del Brochure SSOMA",
-    pdf: "/pdf/brochure-ssoma.pdf",
+    pdf: "https://jsconsulting.pe/assets/Brochure_de_Monitoreos_Ocupacionales_JS_Consulting.pdf",
   },
 ];

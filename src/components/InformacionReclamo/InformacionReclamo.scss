@@ -44,6 +44,31 @@
             grid-template-columns: repeat(2,1fr);
         }
     }
+    .radio-group{
+        span{
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+      
+    }
    
 
+    &__error {
+        position: absolute;
+        top: -1.9rem;
+        left: 0;
+      color: #e63946;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      white-space: normal;
+      text-overflow: ellipsis;
+    }
+}
+
+.informacion-reclamo__input{
+    position: relative;
 }

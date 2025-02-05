@@ -4,6 +4,7 @@
     width: 100% ;
     background: white;
     border-top: 2rem solid #13124A;
+    margin-bottom: 3rem;
     &__contentall{
         padding: 4.5rem 0;
         display: grid;
@@ -155,7 +156,7 @@
 
 .about-us-section__content-videos {
     width: 100%;
-    height: 108%;
+    height: 109%;
     overflow: hidden;
     position: relative;
     display: inline-block;
@@ -183,6 +184,9 @@
   
   .video-text {
     font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
   
 //   .about-us-section__videos {

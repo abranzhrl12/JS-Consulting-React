@@ -7,16 +7,16 @@ export const modalidades = [
   {
     imgSrc: "/assets/home/IconModalidadHouse.svg",
     altText: "Icono modalidad house",
-    text: "Modalidad House",
+    text: "Modalidad  in house",
   },
   {
     imgSrc: "/assets/home/IconModalidadAsincrona.svg",
     altText: "Icono modalidad asincrónica",
-    text: "Modalidad Asincrónica",
+    text: "Modalidad asincrónica",
   },
   {
     imgSrc: "/assets/home/IconoModalidadSincrona.svg",
     altText: "Icono modalidad sincrónica",
-    text: "Modalidad Sincrónica",
+    text: "Modalidad sincrónica",
   },
 ];

@@ -5,6 +5,7 @@ import iconcalendared from "../../assets/iconhorariosred.svg";
 import iconadministracion from "../../assets/iconadministracionred.svg";
 import iconcordinacion from "../../assets/Iconcordiancionred.svg";
 import iconatencioncliente from "../../assets/iconatencionred.svg";
+import iconfinanzas from "../../assets/iconofinanzas.svg";
 export const SectContact = () => {
   return (
     <section className="section-contact">
@@ -27,7 +28,7 @@ export const SectContact = () => {
 
           <div className="section-contact__info-content">
             <figure>
-              <img src={iconadministracion} alt="" />
+              <img src={iconadministracion} alt="icono administración" />
             </figure>
             <div>
               <h5>Administración</h5>
@@ -38,7 +39,7 @@ export const SectContact = () => {
 
           <div className="section-contact__info-content">
             <figure>
-              <img src={iconcordinacion} alt="" />
+              <img src={iconcordinacion} alt="icono cordinación" />
             </figure>
             <div>
               <h5>Coordinación</h5>
@@ -48,12 +49,22 @@ export const SectContact = () => {
           </div>
           <div className="section-contact__info-content">
             <figure>
-              <img src={iconatencioncliente} alt="" />
+              <img src={iconatencioncliente} alt="icono atención al cliente" />
             </figure>
             <div>
               <h5>Atención al Cliente</h5>
               <p>+51 936 381 634</p>
               <p>atencionalcliente@jsconsulting.pe</p>
+            </div>
+          </div>
+          <div className="section-contact__info-content">
+            <figure>
+              <img src={iconfinanzas} alt="icono finanzas" />
+            </figure>
+            <div>
+              <h5>Finanzas</h5>
+              <p>+51 960 762 130</p>
+              <p>finanzas@jsconsulting.pe</p>
             </div>
           </div>
         </div>

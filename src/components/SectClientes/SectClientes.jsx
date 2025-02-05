@@ -58,7 +58,7 @@ export const Clientes = () => {
   return (
     <section className="Clientes" aria-labelledby="clientes-title">
       <div className="Clientes__contentall">
-        <h2 id="clientes-title">Nuestros Clientes</h2>
+        <h2 className="Clientes__titles">Nuestros Clientes</h2>
         <div
           className="Clientes__Carrousel"
           aria-label="Carrusel de logos de clientes"

@@ -25,6 +25,22 @@
         position: relative;
         overflow: hidden;
       }
+
+      &__titles{
+        width: 100%;
+     
+        color: var(--color-title-secondary);
+        text-align: center;
+        font-size: 1.9rem;
+        
+        @include m.tablet {
+            font-size: 2.2rem;
+        }
+        
+        @include m.desktop-small {
+            font-size: 4rem;
+        }
+      }
       
   }
 
@@ -97,7 +113,3 @@
       margin: 0 50px;
     }
   }
-  
-  
-
-  

@@ -14,6 +14,23 @@
             align-items: center;
         }
     }
+    &__container{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        
+        @include m.desktop-small {
+            max-width: 42rem;
+        }
+    }
+    &__content{
+        
+        @include m.tablet {
+            display: flex;
+            gap: 2rem;
+           
+        }
+    }
     &__form{
         @include m.desktop-small {
             width: 70%;
@@ -32,10 +49,16 @@
         }
     }
     &__socials{
-        padding: 0 3rem;
+       
+        padding: 0 1.5rem;
         h2{
             text-align: center;
+            
+            @include m.desktop-small {
+                text-align: left;
+            }
         }
+        
         ul{   
             padding: 1rem;
             background: #FF3E33;
@@ -45,12 +68,22 @@
             align-items: center;
             gap: 1rem;
             @include m.tablet {          
-                max-width: 25rem;
+                max-width: 30rem;
                 margin: 0 auto;
             }
+            @include m.desktop-small {
+                margin: unset;
+                margin-right: auto;
+            }
+          
         }
         img{
             display: block;
+            width: 4rem;
+            
+            @include m.tablet {
+                width: 4.5rem;
+            }
         }
     }
 }
