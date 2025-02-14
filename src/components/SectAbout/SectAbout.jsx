@@ -189,7 +189,7 @@ export const SectAbout = () => {
               )}
               <video
                 ref={videoRef2} // Usar el segundo ref
-                className="about-us-section__videos"
+                className="about-us-section__videos about-cover"
                 id="video-Nosotros2"
                 src="https://jsconsulting.pe/videos/barcelona.mp4"
                 controls={showControls} // Los controles solo se mostrarán después de 2 segundos

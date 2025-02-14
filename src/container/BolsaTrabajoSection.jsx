@@ -68,12 +68,12 @@ export const BolsaTrabajoSection = () => {
               </li>
               <li>
                 <a href="https://www.youtube.com/channel/URL_DE_YOUTUBE">
-                  <img src={icontik} alt="nuestro tiktok" />
+                  <img src={iconyoutube} alt="nuestro tiktok" />
                 </a>
               </li>
               <li>
                 <a href="https://www.tiktok.com/@js.consulting?_t=ZM-8sq9sZHeiBy&_r=1">
-                  <img src={iconyoutube} alt="" />
+                  <img src={icontik} alt="" />
                 </a>
               </li>
             </ul>

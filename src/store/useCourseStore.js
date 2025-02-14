@@ -19,7 +19,6 @@ export const useCourseStore = create((set) => ({
       // Suponemos que la data es un array de cursos
       set({ courses: data, loading: false });
     } catch (error) {
-      console.error("Error fetching courses:", error);
       set({ error: error.message, loading: false });
     }
   },

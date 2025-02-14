@@ -2,16 +2,18 @@
 @use '../../styles/utils/mixins.scss' as m;
 .curso-plantilla{
     width: 100%;
-    height: 58rem;
+    height: 67rem;
     padding: 1rem 0;
     border: 1rem solid #FF3E33;
     position: relative;
     box-sizing: border-box;
     @include m.tablet {
         overflow: hidden;
+        height: 60rem;
     
     }
     @include m.desktop-ultra-hd {
+        height: 60rem;
         border: 2rem solid #FF3E33;
     }
     &::before{
@@ -297,25 +299,47 @@
         justify-content: center;
         align-items: center;
         gap: 1rem;
-        margin-left: -0.9rem; 
+        // margin-left: -0.9rem; 
+        margin-top: -2rem;
+        padding-left: 4rem;
         @include m.phone-x1 {
             margin-left: 0;
         }
+        
+        @include m.tablet-small {
+            margin-top: unset;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            padding-top: 6rem;
+        }
         @include m.tablet {
+            // width: 25rem;
+            grid-template-columns: unset;
+            gap: 0;
             position: absolute;
             align-items: flex-end;
-            right: 11%;
-            bottom: 3%;
+            right:3.5%;
+            bottom: 0.8%;
+           
         }
         @include m.desktop-small {
-            right: 5%;
+            display: flex;
+            bottom: 4%;
+           
+            padding: 0;
+     
+            right:2.5%;
             flex-direction: row;
-            gap: 3rem;
+            gap: 2rem;
         }
     }
     &__contact-item{
         width: 80%;
         display: flex;
         gap: 1rem;
+        
+        @include m.desktop-small {
+            width: fit-content;
+        }
     }
 }

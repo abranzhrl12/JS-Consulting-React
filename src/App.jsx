@@ -17,9 +17,7 @@ export const App = () => {
       <Routes>
         <Route
           path="/"
-          element={
-            <MainLayout videoUrl="https://jsconsulting.pe/videos/videoBanner.mp4" />
-          }
+          element={<MainLayout videoUrl="/assets/videoBanner.webm" />}
         >
           <Route index element={<HomePage />} />
           <Route path="nosotros" element={<Nosotros />} />

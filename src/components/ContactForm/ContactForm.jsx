@@ -9,6 +9,7 @@ export const ContactForm = ({ background = "#FCFCFC" }) => {
   const [formData, setFormData] = useState({
     tNombreCompleto: "",
     tEmail: "",
+    tEmpresa: "",
     tTelefono: "",
     tMensaje: "",
   });
@@ -28,9 +29,9 @@ export const ContactForm = ({ background = "#FCFCFC" }) => {
   const showModal = (status, title, message) => {
     setModalState({
       visible: true,
-      status: status,
-      title: title,
-      message: message,
+      status,
+      title,
+      message,
     });
   };
 
@@ -47,7 +48,11 @@ export const ContactForm = ({ background = "#FCFCFC" }) => {
         body: JSON.stringify(formData),
       });
 
-      if (!response.ok) throw new Error("Error al enviar el formulario");
+      if (!response.ok) {
+        // Intentamos extraer el mensaje de error enviado por la API
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Error al enviar el formulario");
+      }
 
       // Mostrar modal de éxito
       showModal(
@@ -60,6 +65,7 @@ export const ContactForm = ({ background = "#FCFCFC" }) => {
       setFormData({
         tNombreCompleto: "",
         tEmail: "",
+        tEmpresa: "",
         tTelefono: "",
         tMensaje: "",
       });
@@ -68,7 +74,8 @@ export const ContactForm = ({ background = "#FCFCFC" }) => {
       showModal(
         "error",
         "¡Oops! Algo salió mal",
-        "Hubo un error al enviar el formulario. Inténtelo de nuevo."
+        error.message ||
+          "Hubo un error al enviar el formulario. Inténtelo de nuevo."
       );
     }
 
@@ -85,7 +92,6 @@ export const ContactForm = ({ background = "#FCFCFC" }) => {
       <p>Déjenos sus datos y nos pondremos en contacto</p>
 
       <div className="contact-form__grid">
-        {/* Tus inputs se mantienen intactos */}
         <InputField
           placeholder="Nombre y Apellido"
           value={formData.tNombreCompleto}
@@ -104,6 +110,15 @@ export const ContactForm = ({ background = "#FCFCFC" }) => {
         />
 
         <InputField
+          placeholder="Empresa"
+          value={formData.tEmpresa}
+          onChange={(value) => handleInputChange("tEmpresa", value)}
+          // La empresa es opcional, por lo que se valida siempre como correcto
+          validate={() => true}
+          errorMessage=""
+        />
+
+        <InputField
           type="tel"
           placeholder="Teléfono Celular"
           value={formData.tTelefono}
@@ -115,18 +130,17 @@ export const ContactForm = ({ background = "#FCFCFC" }) => {
         <div className="contact-form__textarea">
           <TextAreaField
             name="mensaje"
-            placeholder="Mensaje/Requerimiento "
+            placeholder="Mensaje/Requerimiento"
             value={formData.tMensaje}
             onChange={(value) => handleInputChange("tMensaje", value)}
             showLabel={true}
           />
         </div>
 
-        <SubmitButton disabled={loading} className="contact-form__subtmit">
+        <SubmitButton disabled={loading} className="contact-form__submit">
           {loading ? "Enviando..." : "Enviar"}
         </SubmitButton>
 
-        {/* Modal en lugar del mensaje simple */}
         {modalState.visible && (
           <ModalForm
             status={modalState.status}

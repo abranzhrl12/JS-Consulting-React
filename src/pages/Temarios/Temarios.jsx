@@ -29,7 +29,7 @@ export const Temarios = () => {
     <>
       {/* ✅ El HeaderTemario SIEMPRE se renderiza */}
       <HeaderTemario
-        title={course?.tNombre || "Cargando..."}
+        title={course?.tNombre || ""}
         banner={course?.tBannerUrl || "/default-banner.jpg"}
         tDescripcion={course?.tDescripcion || "Cargando descripción..."}
         loading={loading} // Activa el skeleton

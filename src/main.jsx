@@ -9,17 +9,12 @@ registerServiceWorker();
 
 // 📌 Función para cargar y sincronizar los datos
 const fetchData = async () => {
-  console.log("🔄 Sincronizando datos...");
-
   // Siempre se llama a fetchCategories para que realice la carga inicial
   // y la sincronización en segundo plano con la API.
   await useCategoryStore.getState().fetchCategories();
-
-  console.log("✅ Datos listos:", useCategoryStore.getState().categories);
 };
 
 // 📌 Esperar a que los datos se carguen antes de renderizar
 fetchData().then(() => {
-  console.log("🚀 Renderizando la aplicación...");
   createRoot(document.getElementById("root")).render(<App />);
 });

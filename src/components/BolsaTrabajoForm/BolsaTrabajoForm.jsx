@@ -1,206 +1,3 @@
-// import { useState } from "react";
-// import { InputField } from "../InputField/InputField";
-// import { SubmitButton } from "../SubmitButton/SubmitButton";
-// import { ModalForm } from "../ModalForm/ModalForm";
-// import "./bolsaTrabajoForm.scss";
-
-// export const BolsaTrabajoForm = () => {
-//   const [formData, setFormData] = useState({
-//     tNombre: "",
-//     tApellido: "",
-//     tTelefono: "",
-//     tEmail: "",
-//     tDistrito: "",
-//     tCiudad: "",
-//     tProfesion: "",
-//     tPuesto: "",
-//     tLinkedinUrl: "",
-//     cv: null, // Para almacenar el archivo
-//   });
-
-//   const [loading, setLoading] = useState(false);
-//   const [modalState, setModalState] = useState({
-//     visible: false,
-//     status: "success",
-//     title: "",
-//     message: "",
-//   });
-
-//   const handleInputChange = (field, value) => {
-//     setFormData({ ...formData, [field]: value });
-//   };
-
-//   const handleFileChange = (e) => {
-//     setFormData({ ...formData, cv: e.target.files[0] });
-//   };
-
-//   const showModal = (status, title, message) => {
-//     setModalState({
-//       visible: true,
-//       status: status,
-//       title: title,
-//       message: message,
-//     });
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     setLoading(true);
-
-//     // Crear objeto FormData para enviar como multipart/form-data
-//     const formDataToSend = new FormData();
-//     Object.entries(formData).forEach(([key, value]) => {
-//       formDataToSend.append(key, value);
-//     });
-
-//     try {
-//       const response = await fetch("https://api.jsconsulting.pe/work", {
-//         method: "POST",
-//         body: formDataToSend, // FormData se maneja automáticamente sin headers
-//       });
-
-//       if (!response.ok) throw new Error("Error al enviar el formulario");
-
-//       showModal(
-//         "success",
-//         "¡Gracias por postular!",
-//         "Tu información fue enviada correctamente."
-//       );
-
-//       // Resetear formulario
-//       setFormData({
-//         tNombre: "",
-//         tApellido: "",
-//         tTelefono: "",
-//         tEmail: "",
-//         tDistrito: "",
-//         tCiudad: "",
-//         tProfesion: "",
-//         tPuesto: "",
-//         tLinkedinUrl: "",
-//         cv: null,
-//       });
-//     } catch (error) {
-//       showModal(
-//         "error",
-//         "¡Oops! Algo salió mal",
-//         "Hubo un error al enviar el formulario. Inténtelo de nuevo."
-//       );
-//     }
-
-//     setLoading(false);
-//   };
-
-//   return (
-//     <form className="bolsa-trabajo-form" onSubmit={handleSubmit}>
-//       <div className="bolsa-trabajo-form__texts">
-//         <h3>BOLSA DE TRABAJO</h3>
-//         <p>
-//           Envíanos tus datos y experiencia, te responderemos en el menor tiempo
-//           posible.
-//         </p>
-//       </div>
-//       <div className="bolsa-trabajo-form__grid">
-//         <InputField
-//           placeholder="Nombre"
-//           value={formData.tNombre}
-//           onChange={(value) => handleInputChange("tNombre", value)}
-//           validate={(value) => value.trim().length > 0}
-//           errorMessage="El nombre es obligatorio"
-//         />
-//         <InputField
-//           placeholder="Apellido"
-//           value={formData.tApellido}
-//           onChange={(value) => handleInputChange("tApellido", value)}
-//           validate={(value) => value.trim().length > 0}
-//           errorMessage="El apellido es obligatorio"
-//         />
-//         <InputField
-//           placeholder="Teléfono"
-//           type="tel"
-//           value={formData.tTelefono}
-//           onChange={(value) => handleInputChange("tTelefono", value)}
-//           validate={(value) => /^[0-9]{9}$/.test(value)}
-//           errorMessage="Ingrese un teléfono válido"
-//         />
-//         <InputField
-//           type="email"
-//           placeholder="Correo Electrónico"
-//           value={formData.tEmail}
-//           onChange={(value) => handleInputChange("tEmail", value)}
-//           validate={(value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)}
-//           errorMessage="Ingrese un email válido"
-//         />
-//         <InputField
-//           placeholder="Distrito"
-//           value={formData.tDistrito}
-//           onChange={(value) => handleInputChange("tDistrito", value)}
-//           validate={(value) => value.trim().length > 0}
-//           errorMessage="El distrito es obligatorio"
-//         />
-//         <InputField
-//           placeholder="Ciudad"
-//           value={formData.tCiudad}
-//           onChange={(value) => handleInputChange("tCiudad", value)}
-//           validate={(value) => value.trim().length > 0}
-//           errorMessage="La ciudad es obligatoria"
-//         />
-//         <InputField
-//           placeholder="Profesión"
-//           value={formData.tProfesion}
-//           onChange={(value) => handleInputChange("tProfesion", value)}
-//           validate={(value) => value.trim().length > 0}
-//           errorMessage="La profesión es obligatoria"
-//         />
-//         <InputField
-//           placeholder="Puesto al que postula"
-//           value={formData.tPuesto}
-//           onChange={(value) => handleInputChange("tPuesto", value)}
-//           validate={(value) => value.trim().length > 0}
-//           errorMessage="El puesto es obligatorio"
-//         />
-//         <InputField
-//           placeholder="LinkedIn URL"
-//           type="url"
-//           value={formData.tLinkedinUrl}
-//           onChange={(value) => handleInputChange("tLinkedinUrl", value)}
-//           validate={(value) =>
-//             /^(https?:\/\/)?(www\.)?linkedin\.com\/(in|company)\/[a-zA-Z0-9-]+\/?$/.test(
-//               value
-//             )
-//           }
-//           errorMessage="Ingrese un enlace válido de LinkedIn"
-//         />
-
-//         {/* Input para Adjuntar CV (NO SE MODIFICA SU ESTRUCTURA) */}
-//         <div className="bolsa-trabajo-form__file">
-//           <input
-//             type="file"
-//             id="cv"
-//             accept=".pdf,.doc,.docx"
-//             onChange={handleFileChange}
-//           />
-//           {/* Se mantiene la estructura de HTML con la misma clase */}
-//           {/* <label htmlFor="cv">Adjuntar CV</label> */}
-//         </div>
-//       </div>
-
-//       <SubmitButton disabled={loading}>
-//         {loading ? "Enviando..." : "Enviar"}
-//       </SubmitButton>
-
-//       {modalState.visible && (
-//         <ModalForm
-//           status={modalState.status}
-//           title={modalState.title}
-//           message={modalState.message}
-//           onClose={() => setModalState({ ...modalState, visible: false })}
-//         />
-//       )}
-//     </form>
-//   );
-// };
-
 import { useState } from "react";
 import { InputField } from "../InputField/InputField";
 import { SubmitButton } from "../SubmitButton/SubmitButton";
@@ -233,10 +30,6 @@ export const BolsaTrabajoForm = () => {
     setFormData({ ...formData, [field]: value });
   };
 
-  const handleFileChange = (e) => {
-    setFormData({ ...formData, cv: e.target.files[0] });
-  };
-
   const showModal = (status, title, message) => {
     setModalState({
       visible: true,
@@ -244,6 +37,19 @@ export const BolsaTrabajoForm = () => {
       title: title,
       message: message,
     });
+  };
+
+  // Validar que el archivo (CV) no sea mayor a 1 MB
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file && file.size > 1048576) {
+      showModal("error", "Error", "El archivo debe ser maximo 1MB.");
+      // Limpiar el input y el estado
+      e.target.value = null;
+      setFormData({ ...formData, cv: null });
+      return;
+    }
+    setFormData({ ...formData, cv: file });
   };
 
   const handleSubmit = async (e) => {
@@ -269,7 +75,11 @@ export const BolsaTrabajoForm = () => {
         body: formDataToSend,
       });
 
-      if (!response.ok) throw new Error("Error al enviar el formulario");
+      if (!response.ok) {
+        // Intentamos parsear la respuesta de error de la API
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Error al enviar el formulario");
+      }
 
       showModal(
         "success",
@@ -297,7 +107,7 @@ export const BolsaTrabajoForm = () => {
       showModal(
         "error",
         "¡Oops! Algo salió mal",
-        "Hubo un error al enviar el formulario. Inténtelo de nuevo."
+        error.message // Se muestra el mensaje de error proveniente de la API
       );
     }
 
@@ -385,13 +195,17 @@ export const BolsaTrabajoForm = () => {
           errorMessage="Ingrese un enlace válido de LinkedIn"
         />
 
-        {/* Input para Adjuntar CV */}
+        {/* Input para Adjuntar CV con label personalizado */}
         <div className="bolsa-trabajo-form__file">
+          <label htmlFor="cv" className="custom-file-label">
+            {formData.cv ? formData.cv.name : "Seleccionar CV"}
+          </label>
           <input
             type="file"
             id="cv"
             accept=".pdf,.doc,.docx"
             onChange={handleFileChange}
+            style={{ display: "none" }}
           />
         </div>
       </div>

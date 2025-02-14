@@ -20,7 +20,6 @@ export const useServiceDetailStore = create((set, get) => ({
       }));
       return data;
     } catch (error) {
-      console.error("❌ Error al obtener el detalle del servicio:", error);
       throw error;
     }
   },

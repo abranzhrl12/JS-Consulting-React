@@ -245,7 +245,7 @@ export const Footer = () => {
         </div>
       </div>
       <p className="footer__copy">
-        <span className="footer__copy-span">Power by</span> Sertech Peru
+        <span className="footer__copy-span">Power by</span> Sertech Perú
       </p>
     </footer>
   );

@@ -2,12 +2,10 @@ const CACHE_NAME = "api-cache-v1";
 const API_URL = "https://api.jsconsulting.pe/category";
 
 self.addEventListener("install", (event) => {
-  console.log("🛠️ Service Worker instalado");
   event.waitUntil(self.skipWaiting());
 });
 
 self.addEventListener("activate", (event) => {
-  console.log("✅ Service Worker activado");
   event.waitUntil(self.clients.claim());
 });
 
@@ -25,7 +23,6 @@ self.addEventListener("fetch", (event) => {
               return networkResponse;
             })
             .catch((error) => {
-              console.error("Error en la petición de red:", error);
               return cachedResponse;
             });
           // Devuelve la respuesta cacheada inmediatamente, o si no existe, la respuesta de red

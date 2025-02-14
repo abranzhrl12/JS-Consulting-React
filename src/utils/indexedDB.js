@@ -26,7 +26,6 @@ export const openDB = () => {
 // Guardar datos en IndexedDB con timestamp (aunque el timestamp ya no se usa para expiración)
 export const saveToDB = async (data) => {
   if (!data || data.length === 0) {
-    console.warn("⚠️ No se guardarán datos vacíos en IndexedDB.");
     return;
   }
 
@@ -39,10 +38,10 @@ export const saveToDB = async (data) => {
   // Usamos una clave fija ("categories") para almacenar el objeto
   store.put({ id: "categories", data, lastUpdated: Date.now() });
 
-  tx.oncomplete = () =>
-    console.log("✅ Datos guardados correctamente en IndexedDB");
-  tx.onerror = (event) =>
-    console.error("❌ Error guardando en IndexedDB:", event.target.error);
+  // tx.oncomplete = () =>
+  //   console.log("✅ Datos guardados correctamente en IndexedDB");
+  // tx.onerror = (event) =>
+  //   console.error("❌ Error guardando en IndexedDB:", event.target.error);
 };
 
 // ---------------------------
@@ -56,7 +55,7 @@ export const getFromDB = async () => {
 
     request.onsuccess = () => {
       if (request.result) {
-        console.log("📦 Datos obtenidos de IndexedDB:", request.result);
+        // console.log("📦 Datos obtenidos de IndexedDB:", request.result);
         resolve(request.result);
       } else {
         console.warn("⚠️ No hay datos en IndexedDB.");

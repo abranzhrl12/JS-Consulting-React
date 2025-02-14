@@ -5,11 +5,9 @@ export const CursoCarousel = () => {
   return (
     <section className="Curso-Carousel">
       <div className="Curso-Carousel__content-title">
-        <h2 className="Curso-Carousel__title">
-          Cursos Disponibles en Noviembre
-        </h2>
+        <h2 className="Curso-Carousel__title">Cursos Disponibles</h2>
       </div>
-      <Carousel/>
+      <Carousel />
     </section>
   );
 };

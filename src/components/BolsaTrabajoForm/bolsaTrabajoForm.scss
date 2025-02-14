@@ -54,6 +54,19 @@
     display: block;
     ;
 }
+.custom-file-label{
+    color: #C2BABA;
+    width: 100%;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    max-width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+}
 
 // .file-upload-container {
 //     display: flex;

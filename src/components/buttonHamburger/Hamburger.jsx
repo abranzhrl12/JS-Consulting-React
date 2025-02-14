@@ -1,5 +1,4 @@
 export const Hamburger = ({ isOpen, onClick }) => {
-  console.log(isOpen);
   return (
     <button
       className={`hamburger navbar__Icon ${isOpen ? "active" : ""}`}

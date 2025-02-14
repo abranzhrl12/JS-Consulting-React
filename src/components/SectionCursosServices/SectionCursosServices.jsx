@@ -76,11 +76,7 @@ export const SectionCursosServices = () => {
           {[...Array(totalPages)].map((_, index) => (
             <button
               key={index}
-              onClick={() => {
-                changePage(index + 1);
-                // Navegamos al ancla para "subir" al inicio de la sección.
-                window.location.href = "#SectionCursosAnchor";
-              }}
+              onClick={() => changePage(index + 1)}
               className={`Section-Cursos__pagination-btn ${
                 currentPage === index + 1 ? "active" : ""
               }`}

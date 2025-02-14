@@ -1,24 +1,59 @@
 // import { useState, useEffect } from "react";
-// import { useSearchParams } from "react-router-dom";
+// import { useSearchParams, useNavigate } from "react-router-dom";
 
-// export const usePaginatedFetch = (baseData, itemsPerPage = 3) => {
-//   const [searchParams, setSearchParams] = useSearchParams();
-//   const pageFromURL = parseInt(searchParams.get("page")) || 1; // Página desde la URL
+// export const usePaginatedFetch = (baseData) => {
+//   const navigate = useNavigate();
+//   const getItemsPerPage = () => (window.innerWidth >= 1024 ? 9 : 6);
+//   const [itemsPerPage, setItemsPerPage] = useState(getItemsPerPage);
 
-//   const [paginatedData, setPaginatedData] = useState([]);
+//   // Get page from URL params
+//   const [searchParams] = useSearchParams();
+//   const pageFromURL = parseInt(searchParams.get("page"), 10) || 1;
 //   const [currentPage, setCurrentPage] = useState(pageFromURL);
-//   const totalPages = Math.ceil(baseData.length / itemsPerPage); // Calcular total de páginas dinámicamente
 
+//   const totalPages =
+//     baseData.length > 0 ? Math.ceil(baseData.length / itemsPerPage) : 1;
+//   const [paginatedData, setPaginatedData] = useState([]);
+
+//   // Update paginated data when page changes
 //   useEffect(() => {
+//     if (currentPage > totalPages && totalPages > 0) {
+//       setCurrentPage(1);
+//       return;
+//     }
+
 //     const startIndex = (currentPage - 1) * itemsPerPage;
 //     const endIndex = startIndex + itemsPerPage;
-
-//     // Actualizar datos paginados
 //     setPaginatedData(baseData.slice(startIndex, endIndex));
 
-//     // Actualizar la URL
-//     setSearchParams({ page: currentPage });
-//   }, [currentPage, baseData, itemsPerPage, setSearchParams]);
+//     // Update URL with new page number using navigate instead of setSearchParams
+//     const newURL = new URL(window.location.href);
+//     newURL.searchParams.set("page", currentPage);
+//     navigate(`?${newURL.searchParams.toString()}`, { replace: false });
+//   }, [currentPage, baseData, itemsPerPage, totalPages, navigate]);
+
+//   // Listen for URL changes to update the current page
+//   useEffect(() => {
+//     const handlePopState = () => {
+//       const params = new URLSearchParams(window.location.search);
+//       const page = parseInt(params.get("page"), 10) || 1;
+//       setCurrentPage(page);
+//     };
+
+//     window.addEventListener("popstate", handlePopState);
+//     return () => window.removeEventListener("popstate", handlePopState);
+//   }, []);
+
+//   // Handle window resize
+//   useEffect(() => {
+//     const handleResize = () => {
+//       const newItemsPerPage = getItemsPerPage();
+//       setItemsPerPage(newItemsPerPage);
+//     };
+
+//     window.addEventListener("resize", handleResize);
+//     return () => window.removeEventListener("resize", handleResize);
+//   }, []);
 
 //   const changePage = (page) => {
 //     if (page >= 1 && page <= totalPages) {
@@ -28,31 +63,39 @@
 
 //   return { paginatedData, currentPage, totalPages, changePage };
 // };
+
+// // SectionCursosServices.jsx
+// export const SectionCursosServices = () => {
+//   const { slug } = useParams();
+//   const pureSlug = slug.split("?")[0];
+//   const { courses, loading, error, fetchCoursesBySlug } = useCourseStore();
+
+//   useEffect(() => {
+//     if (pureSlug) {
+//       fetchCoursesBySlug(pureSlug);
+//     }
+//   }, [pureSlug, fetchCoursesBySlug]);
+
+//   const { paginatedData, currentPage, totalPages, changePage } =
+//     usePaginatedFetch(courses);
+// };
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 
 export const usePaginatedFetch = (baseData) => {
-  // Función para determinar la cantidad de elementos por página según el ancho de la ventana
+  const navigate = useNavigate();
   const getItemsPerPage = () => (window.innerWidth >= 1024 ? 9 : 6);
-
-  // Inicializamos itemsPerPage según el ancho actual de la ventana
   const [itemsPerPage, setItemsPerPage] = useState(getItemsPerPage);
 
-  // Obtenemos el query param "page" de la URL
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const pageFromURL = parseInt(searchParams.get("page"), 10) || 1;
   const [currentPage, setCurrentPage] = useState(pageFromURL);
 
-  // Calculamos el total de páginas: si no hay elementos, forzamos 1 página para evitar paginación incorrecta
   const totalPages =
     baseData.length > 0 ? Math.ceil(baseData.length / itemsPerPage) : 1;
-
   const [paginatedData, setPaginatedData] = useState([]);
 
-  // Actualizamos la data paginada cada vez que cambie la página, el número de items por página o los datos base
   useEffect(() => {
-    // Si currentPage es mayor que totalPages (por ejemplo, al cambiar el tamaño de pantalla),
-    // reajustamos currentPage a 1
     if (currentPage > totalPages && totalPages > 0) {
       setCurrentPage(1);
       return;
@@ -62,11 +105,27 @@ export const usePaginatedFetch = (baseData) => {
     const endIndex = startIndex + itemsPerPage;
     setPaginatedData(baseData.slice(startIndex, endIndex));
 
-    // Actualizamos el query param "page" en la URL
-    setSearchParams({ page: currentPage });
-  }, [currentPage, baseData, itemsPerPage, totalPages, setSearchParams]);
+    // Mantenemos los parámetros existentes y solo actualizamos 'page'
+    const currentParams = new URLSearchParams(window.location.search);
+    currentParams.set("page", currentPage);
+    navigate(`?${currentParams.toString()}`, {
+      replace: true, // Usamos replace para no crear entradas adicionales en el historial
+      preventScrollReset: true, // Evitamos el scroll automático
+    });
+  }, [currentPage, baseData, itemsPerPage, totalPages, navigate]);
 
-  // Escuchamos el evento de resize para actualizar el número de elementos por página dinámicamente
+  // Manejador mejorado para cambios en la URL
+  useEffect(() => {
+    const handlePopState = () => {
+      const params = new URLSearchParams(window.location.search);
+      const page = parseInt(params.get("page"), 10) || 1;
+      setCurrentPage(page);
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
   useEffect(() => {
     const handleResize = () => {
       const newItemsPerPage = getItemsPerPage();
@@ -74,13 +133,17 @@ export const usePaginatedFetch = (baseData) => {
     };
 
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const changePage = (page) => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
+      // Opcional: Scroll suave al cambiar de página manualmente
+      document.getElementById("SectionCursosAnchor")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   };
 

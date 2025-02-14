@@ -42,10 +42,10 @@ export const FrequentlyQuestions = () => {
               </div>
               {activeIndex === 0 && (
                 <p className="frequently-questions__paragraph">
-                  Accede a la opción Sigecap en nuestra página web. Si es tu
-                  primera vez, selecciona “Registrarme” y sigue los pasos
-                  indicados. Si ya tienes usuario, completa tus datos y haz clic
-                  en “Ingresar”.
+                  Entrar a la opción Sigecap en nuestra página web. Si es la
+                  primera vez que deseas inscribirte ingresa a la opción
+                  “Registrarme” y seguir los pasos indicados. Si ya cuentas con
+                  usuario, completa tus datos y haz click en “Ingresar”.
                 </p>
               )}
             </div>
@@ -63,13 +63,13 @@ export const FrequentlyQuestions = () => {
                   alt="Pregunta sobre inscripción"
                 />
                 <p>
-                  Si la inducción es para un día lunes, ¿hasta qué día podría
+                  Si la inducción es para un día lunes ¿Hasta que día podría
                   realizar la inscripción?
                 </p>
               </div>
               {activeIndex === 1 && (
                 <p className="frequently-questions__paragraph">
-                  Hasta el sábado anterior, en el horario de 07:00 am a 4:00 pm.
+                  Hasta el día sábado en el horario de 07:00 am a 4:00 pm.
                 </p>
               )}
             </div>
@@ -90,8 +90,8 @@ export const FrequentlyQuestions = () => {
               </div>
               {activeIndex === 2 && (
                 <p className="frequently-questions__paragraph">
-                  Sí, no es necesario pertenecer a una empresa para inscribirte
-                  en un curso.
+                  Si, no es necesario pertenecer a una empresa para poder
+                  inscribirte en un curso.
                 </p>
               )}
             </div>
@@ -113,8 +113,8 @@ export const FrequentlyQuestions = () => {
               </div>
               {activeIndex === 7 && (
                 <p className="frequently-questions__paragraph">
-                  Los certificados estarán disponibles 24 horas después de
-                  culminar el curso (previo pago realizado).
+                  Se podrán visualizar los certificados 24 horas después
+                  culminado el curso (previo pago realizado).
                 </p>
               )}
             </div>
@@ -135,12 +135,16 @@ export const FrequentlyQuestions = () => {
                   src="/assets/Nosotros/arrrowQuestionRed.svg"
                   alt="Pregunta sobre inscripción"
                 />
-                <p>¿En cuánto tiempo obtengo mi certificado?</p>
+                <p>
+                  Si tengo un reclamo ¿Existe un número al cual pueda
+                  comunicarme?
+                </p>
               </div>
               {activeIndex === 3 && (
                 <p className="frequently-questions__paragraph">
-                  Los certificados estarán disponibles 24 horas después de
-                  culminar el curso (previo pago realizado).
+                  Si, para quejas, reclamos y/o sugerencias el número es +51 936
+                  381 634 para atención al cliente. Comunícate con nosotros vía
+                  llamada o whatsapp.
                 </p>
               )}
             </div>
@@ -157,15 +161,13 @@ export const FrequentlyQuestions = () => {
                   src="/assets/Nosotros/arrrowQuestionRed.svg"
                   alt="Pregunta sobre inscripción"
                 />
-                <p>
-                  Si tengo un reclamo, ¿existe un número al cual pueda
-                  comunicarme?
-                </p>
+                <p>¿Qué debo llevar para mi curso presencial?</p>
               </div>
               {activeIndex === 4 && (
                 <p className="frequently-questions__paragraph">
-                  Sí, para quejas, reclamos y sugerencias puedes comunicarte al
-                  +51 936 381 634 vía llamada o WhatsApp.
+                  Debes llevar de forma obligatoria tu DNI (sin ello no podrás
+                  ingresar) un lapicero y un cuaderno donde podrás colocar tus
+                  apuntes en el transcurso de la capacitación.
                 </p>
               )}
             </div>
@@ -182,12 +184,12 @@ export const FrequentlyQuestions = () => {
                   src="/assets/Nosotros/arrrowQuestionRed.svg"
                   alt="Pregunta sobre inscripción"
                 />
-                <p>¿Qué debo llevar para mi curso presencial?</p>
+                <p>¿Existe tolerancia para el ingreso a capacitaciones?</p>
               </div>
               {activeIndex === 5 && (
                 <p className="frequently-questions__paragraph">
-                  Lleva tu DNI (obligatorio), un lapicero y un cuaderno para
-                  apuntes durante la capacitación.
+                  Si, tienes tolerancia de 15 minutos para tu ingreso. Luego de
+                  ello no podrás ingresar a nuestras instalaciones.
                 </p>
               )}
             </div>
@@ -209,8 +211,9 @@ export const FrequentlyQuestions = () => {
               </div>
               {activeIndex === 6 && (
                 <p className="frequently-questions__paragraph">
-                  Las facturas estarán disponibles en la plataforma SIGECAP
-                  dentro de un máximo de 3 días tras finalizar el curso.
+                  Las facturas estarán disponibles en nuestra plataforma SIGECAP
+                  dentro de un máximo de 3 días después de haber culminado el
+                  curso de capacitación.
                 </p>
               )}
             </div>
