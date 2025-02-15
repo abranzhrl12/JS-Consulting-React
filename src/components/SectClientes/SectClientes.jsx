@@ -31,55 +31,55 @@ const clientLogos = [
     alt: "Logo del cliente Empresa 7",
   },
   {
-    src: "/public/assets/LogosClientes/sideperu.jpg",
+    src: "/assets/LogosClientes/sideperu.jpg",
     alt: "Logo del cliente Empresa 8",
   },
   {
-    src: "/public/assets/LogosClientes/logo9.jpg",
+    src: "/assets/LogosClientes/logo9.jpg",
     alt: "Logo del cliente Empresa 9",
   },
   {
-    src: "/public/assets/LogosClientes/logo10.jpg",
+    src: "/assets/LogosClientes/logo10.jpg",
     alt: "Logo del cliente Empresa 10",
   },
   {
-    src: "/public/assets/LogosClientes/logo11.jpg",
+    src: "/assets/LogosClientes/logo11.jpg",
     alt: "Logo del cliente Empresa 11",
   },
   {
-    src: "/public/assets/LogosClientes/logo12.jpg",
+    src: "/assets/LogosClientes/logo12.jpg",
     alt: "Logo del cliente Empresa 12",
   },
   {
-    src: "/public/assets/LogosClientes/logo13.jpg",
+    src: "/assets/LogosClientes/logo13.jpg",
     alt: "Logo del cliente Empresa 13",
   },
   {
-    src: "/public/assets/LogosClientes/logo14.jpg",
+    src: "/assets/LogosClientes/logo14.jpg",
     alt: "Logo del cliente Empresa 14",
   },
   {
-    src: "/public/assets/LogosClientes/logo15.jpg",
+    src: "/assets/LogosClientes/logo15.jpg",
     alt: "Logo del cliente Empresa 15",
   },
   {
-    src: "/public/assets/LogosClientes/logo16.jpg",
+    src: "/assets/LogosClientes/logo16.jpg",
     alt: "Logo del cliente Empresa 16",
   },
   {
-    src: "/public/assets/LogosClientes/logo17.jpg",
+    src: "/assets/LogosClientes/logo17.jpg",
     alt: "Logo del cliente Empresa 17",
   },
   {
-    src: "/public/assets/LogosClientes/logo18.jpg",
+    src: "/assets/LogosClientes/logo18.jpg",
     alt: "Logo del cliente Empresa 18",
   },
   {
-    src: "/public/assets/LogosClientes/logo19.jpg",
+    src: "/assets/LogosClientes/logo19.jpg",
     alt: "Logo del cliente Empresa 19",
   },
   {
-    src: "/public/assets/LogosClientes/logo20.jpg",
+    src: "/assets/LogosClientes/logo20.jpg",
     alt: "Logo del cliente Empresa 20",
   }
 ];
