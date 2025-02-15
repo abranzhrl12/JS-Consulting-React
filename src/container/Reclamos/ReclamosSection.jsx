@@ -208,13 +208,13 @@ export const ReclamosSection = () => {
     // Si es "Reclamo" (1) => monto es obligatorio
     // Si es "Queja" (2) o "Sugerencia" (3) => monto puede ser opcional
     if (formData.tipoSolicitud === 1 || formData.tipoSolicitud === 2) {
-      // Monto requerido
-      if (!/^[0-9]+$/.test(formData.montoReclamado.trim())) {
+      if (!/^\d+(\.\d{1,2})?$/.test(formData.montoReclamado.trim())) {
         errors.push(
-          "El monto del servicio reclamado es obligatorio y solo debe contener dígitos."
+          "El monto del servicio reclamado debe ser un número válido con hasta 2 decimales."
         );
       }
     }
+    
     // Si es 2 o 3, no forzamos el monto.
 
     // Descripción (detalleQueja): obligatorio

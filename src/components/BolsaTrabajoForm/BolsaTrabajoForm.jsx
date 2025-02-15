@@ -52,41 +52,44 @@ export const BolsaTrabajoForm = () => {
     setFormData({ ...formData, cv: file });
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
+  
     // Validar que el teléfono tenga exactamente 9 dígitos
     if (!/^[0-9]{9}$/.test(formData.tTelefono)) {
       showModal("error", "Error", "El teléfono debe tener 9 dígitos.");
       setLoading(false);
       return;
     }
-
+  
     // Crear objeto FormData para enviar como multipart/form-data
     const formDataToSend = new FormData();
     Object.entries(formData).forEach(([key, value]) => {
-      formDataToSend.append(key, value);
+      if (value !== "" && value !== null) {  // Evitar campos vacíos o nulos
+        formDataToSend.append(key, value);
+      }
     });
-
+  
     try {
       const response = await fetch("https://api.jsconsulting.pe/work", {
         method: "POST",
         body: formDataToSend,
       });
-
+  
       if (!response.ok) {
         // Intentamos parsear la respuesta de error de la API
         const errorData = await response.json();
         throw new Error(errorData.message || "Error al enviar el formulario");
       }
-
+  
       showModal(
         "success",
         "¡Gracias por postular!",
         "Tu información fue enviada correctamente."
       );
-
+  
       // Resetear formulario y limpiar campo de archivo
       setFormData({
         tNombre: "",
@@ -100,7 +103,7 @@ export const BolsaTrabajoForm = () => {
         tLinkedinUrl: "",
         cv: null,
       });
-
+  
       // Limpiar campo de archivo manualmente
       document.getElementById("cv").value = null;
     } catch (error) {
@@ -110,10 +113,10 @@ export const BolsaTrabajoForm = () => {
         error.message // Se muestra el mensaje de error proveniente de la API
       );
     }
-
+  
     setLoading(false);
   };
-
+  
   return (
     <form className="bolsa-trabajo-form" onSubmit={handleSubmit}>
       <div className="bolsa-trabajo-form__texts">
@@ -182,7 +185,7 @@ export const BolsaTrabajoForm = () => {
           validate={(value) => value.trim().length > 0}
           errorMessage="El puesto es obligatorio"
         />
-        <InputField
+        {/* <InputField
           placeholder="LinkedIn URL"
           type="url"
           value={formData.tLinkedinUrl}
@@ -193,7 +196,18 @@ export const BolsaTrabajoForm = () => {
             )
           }
           errorMessage="Ingrese un enlace válido de LinkedIn"
-        />
+        /> */}
+        <InputField
+  placeholder="LinkedIn URL"
+  type="url"
+  value={formData.tLinkedinUrl}
+  onChange={(value) => handleInputChange("tLinkedinUrl", value)}
+  validate={(value) =>
+    value.trim() === "" || /^(https?:\/\/)?(www\.)?linkedin\.com\/(in|company)\/[a-zA-Z0-9-]+\/?$/.test(value)
+  }
+  errorMessage="Ingrese un enlace válido de LinkedIn"
+/>
+
 
         {/* Input para Adjuntar CV con label personalizado */}
         <div className="bolsa-trabajo-form__file">

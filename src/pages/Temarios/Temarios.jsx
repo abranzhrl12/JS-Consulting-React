@@ -48,6 +48,7 @@ export const Temarios = () => {
           <ContainerTemario
             contenidoHtml={course.tHtml}
             tNombre={course.tNombre}
+            imageurl={course.tCertificadoUrl}
           />
         </>
       ) : (

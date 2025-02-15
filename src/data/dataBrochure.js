@@ -21,7 +21,7 @@ export const brochures = [
     id: 3,
     title: "BROCHURE",
 
-    description: "Descarga nuestro Brochure de SSOMA aquí",
+    description: "Descarga nuestro brochure de Monitoreos Ocupacionales aquí",
     image: "/assets/home/Brochure3.webp",
     alt: "Portada del Brochure SSOMA",
     pdf: "https://jsconsulting.pe/assets/Brochure_de_Monitoreos_Ocupacionales_JS_Consulting.pdf",

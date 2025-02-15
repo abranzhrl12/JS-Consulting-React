@@ -6,7 +6,7 @@ import { SectCertifiacion } from "../../components/SectionCertifiacion/SectCerti
 import { Modalidades } from "../../components/SectModalidades/Modalidades";
 import { Clientes } from "../../components/SectClientes/SectClientes";
 // import { Footer } from "../../components/footer/Footer";
-import { ContainerTemario } from "../../container/ContainerTemario/ContainerTemario";
+//import { ContainerTemario } from "../../container/ContainerTemario/ContainerTemario";
 
 export const HomePage = () => {
   return (

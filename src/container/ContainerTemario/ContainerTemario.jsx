@@ -1,6 +1,6 @@
 import "./containerTemario.scss";
 
-export const ContainerTemario = ({ contenidoHtml, tNombre }) => {
+export const ContainerTemario = ({ contenidoHtml, tNombre,imageurl }) => {
   if (!contenidoHtml) {
     return <h2>Cargando...</h2>;
   }
@@ -23,7 +23,7 @@ export const ContainerTemario = ({ contenidoHtml, tNombre }) => {
         </div>
         <div className="Temarios__images">
           <div>
-            <img src="/assets/cursotemario/certificate.webp" alt="" />
+            <img src={imageurl} alt="" />
           </div>
           <div>
             <h4 className="Temarios__imagesTitle">Certifícate como:</h4>
